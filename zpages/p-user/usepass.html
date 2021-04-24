@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>修改密码</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container sh_main_content">
+			<div class="ui equal width grid stackable padded">
+				<div class="five wide tablet three wide computer column sh_userinfo_side">
+					<div class="ui center aligned basic segment">
+						<div class="content">
+							<img class="ui centered small circular image" src="../../img/avatar/people/enid.png" alt="label-image">
+							<div class="user_realname">张老师</div>
+							<div class="user_realname">
+								<a class="ui teal fluid large button avatareditbtn"><i class="upload icon"></i>更换头像</a>
+							</div>
+						</div>
+						<div class="content py-5">
+							<a class="ui inverted basic fluid large button my-4">个人信息<i class="long arrow alternate right icon"></i></a>
+							<a class="ui teal fluid large button my-4">修改密码<i class="long arrow alternate right icon"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="eleven wide tablet thirteen wide computer column sh_userinfo_wrap">
+					<div class="ui left aligned basic segment">
+						<div class="content">
+							<form id="userinfoform" class="ui inline form large">
+								<div class="inline field my-5 py-2"></div>
+								<div class="inline field">
+									<label>原密码：</label>
+									<div class="ui icon input">
+										<input name="userPassword" type="password" placeholder="请输入原密码" autocomplete="off">
+									</div>
+								</div>
+								<div class="inline field">
+									<label>新密码：</label>
+									<div class="ui icon input">
+										<input name="userNewPassword" type="password" placeholder="请输入新密码" autocomplete="off">
+									</div>
+								</div>
+								<div class="inline field">
+									<label>确认密码：</label>
+									<div class="ui icon input">
+										<input name="userComfirmPassword" type="password" placeholder="请再次输入密码" autocomplete="off">
+									</div>
+								</div>
+								<div class="inline field mt-5 py-5 pr-5 mr-5 sh_center">
+									<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+									<a class="ui teal button huge mx-5 my-2">返回首页</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+	
+	<!-- 更换头像弹窗 -->
+	<div class="ui small modal">
+		<div class="header">更换头像<span class="actions fr"><i class="remove icon sh_close cancel"></i></span></div>
+		<div class="content">
+			<div class="sh_upload">
+				<div class="sh_upload_image">
+					<img class="ui centered small circular image sh_upload_img" src="../../img/avatar/people/enid.png" alt="label-image">
+				</div>
+				<div class="sh_upload_list"></div>
+				<div class="sh_upload_action">
+					<button class="ui orange button filebtn">选择文件</button>
+					<button class="ui teal button uploadbtn">开始上传</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		//更换头像弹窗
+		$(".avatareditbtn").click(function(){
+			$('.ui.modal').modal({
+				closable: false,
+				inverted: true,
+				blurring: false
+			}).modal('show');
+		})
+		
+		var uploader = sh.uploadimg('.sh_upload', {
+			auto: false,
+			pick: {
+				id:'.sh_upload .filebtn',  //选择文件的按钮
+				multiple:false, 
+				label: '选择图片'
+			},
+			uploadbtn: '.sh_upload .uploadbtn',
+			server: 'http://platform2.geege.com/student/uploadimg',
+			formData: {},
+			fileVal: 'avatar',
+		},function(res){
+			//上传完成回调
+			if(res.status == 'success'){
+				sh.alert.success("上传成功！").then(function(){
+					// 确认回调
+					location.reload()
+				})
+			}else{
+				sh.alert.error("上传失败！")
+			}
+		});
+	</script>
+</body>
+</html>

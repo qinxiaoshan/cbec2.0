@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>注册</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body style="background: #e6e6e6;">
+	
+	<div class="loginwrap">
+		<div class="loginheader">
+			<div class="sh_header">
+				<div class="ui container">
+					<div class="ui menu icon borderless grid" data-color="inverted white">
+						<a class="item logo">
+							<img src="../../img/logo.png" alt="">
+							<img src="../../img/thumblogo.png" alt="" class="displaynone">
+						</a>
+						<div class="right menu">
+							<div class="ui dropdown item top right pointing">
+								<h3>欢迎注册</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui container">
+			<div class="ui grid center aligned">
+				<div class="row">
+					<div class="sixteen wide tablet ten wide computer column">
+						<div class="ui left aligned registerformbox">
+							<h1 class="ui center aligned loginhead my-4">用户注册</h1>
+							
+							<form id="userregform" class="ui form large sh_form">
+								<div class="field">
+									<label>姓名：</label>
+									<div class="ui icon input">
+										<input name="userRealName" data-validate="userRealName" type="text" placeholder="请输入姓名" autocomplete="off">
+									</div>
+								</div>
+								<div class="field">
+									<label>学号：</label>
+									<div class="ui icon input">
+										<input name="userStudentNumber" data-validate="userStudentNumber" type="number" placeholder="请输入学号" autocomplete="off">
+									</div>
+								</div>
+								<div class="field">
+									<label>班级：</label>
+									<div class="ui icon input">
+										<select name="userStudentClass" data-validate="userStudentClass" class="ui search fluid dropdown">
+											<option value="">请选择班级</option>
+											<option value="1">Male</option>
+											<option value="0">Female</option>
+										</select>
+									</div>
+								</div>
+								<div class="field">
+									<label>手机号：</label>
+									<div class="ui icon input">
+										<input name="userTelphone" data-validate="userTelphone" type="number" placeholder="请输入手机号" autocomplete="off">
+									</div>
+								</div>
+								<div class="field">
+									<label>密码：</label>
+									<div class="ui icon input">
+										<input name="userPassword" data-validate="userPassword" type="password" placeholder="请输入密码" autocomplete="off">
+									</div>
+								</div>
+								<div class="field">
+									<label>确认：</label>
+									<div class="ui icon input">
+										<input name="userAffirmPassword" data-validate="userAffirmPassword" type="password" placeholder="请再次输入密码" autocomplete="off">
+									</div>
+								</div>
+								<div class="field">
+									<label></label>
+									<div class="ui icon input">
+										<button type="button" class="ui teal fluid button submit huge">立即注册</button>
+									</div>
+								</div>
+								<div class="field">
+									<label></label>
+									<div class="ui icon input">
+										<div class="w-100 sh_center"><a href="">使用已有账号登录</a></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+	</div>
+	
+	
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		var $userregform = $('#userregform')
+		//注册按钮事件
+		$userregform.find(".button.submit").click(function(e){
+			if($userregform.form('is valid')) {
+				//表单验证通过
+				$userregform.addClass('loading')
+				var formAllFields = $userregform.form('get values')
+				console.log(formAllFields)
+				setTimeout(function(){
+					$userregform.removeClass('loading')
+				},1000)
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>课程管理</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item active" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item active" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding">
+						<div class="ui left floated header"><h2 class="sh_contitle">课程管理</h2></div>
+						<div class="ui right floated header sh_extra">
+							<div class="ui action input ml-3">
+								<input type="text" placeholder="请输入课程名称">
+								<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+							</div>
+							<button class="ui teal large button ml-3 mr-0 course_add_btn">添加课程</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="ui segment no-padding">
+						<div class="ui pointing huge teal secondary menu stackable tabular sh_coursetab">
+							<a class="item active" data-tab="courseAll">全部</a>
+							<a class="item" data-tab="courseNotStart">未开始</a>
+							<a class="item" data-tab="courseOnGoing">进行中</a>
+							<a class="item" data-tab="courseHasEnd">已结束</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="coursewrap">
+						<!-- 全部 -->
+						<div class="ui tab basic segment no-padding active" data-tab="courseAll">
+							<div class="courselist sh_page_list">
+								
+								<!-- 班级三种状态增加不同类名 未开始：courseitemNotStart 进行中：courseitemOnGoing 已结束：courseitemHasEnd -->
+								<!-- 列表循环项 -->
+								<div class="courseitem courseitemOnGoing">
+									<div class="courseitemimage">
+										<img src="../../img/deadpool.jpeg" alt="">
+									</div>
+									<div class="courseitemcontent">
+										<div class="courseitem_status"></div>
+										<div class="courseitem_header">
+											<h3 class="name">亚马逊运营实践课程-Reeyp</h3>
+										</div>
+										<div class="courseitem_info">
+											<p>负责人：jiaoshi05</p>   
+											<p>
+												<span class="timegroup">开始时间：2021-01-01  12:20:30</span>
+												<span class="timegroup">结束时间：2021-01-20  12:20:30</span>
+											</p>   										</div>
+										<div class="courseitem_invite">
+											<div class="course_code">
+												<span class="number">邀请码：<b>Rei3py</b></span>
+												<!-- data-number：作为一键复制的内容 -->
+												<a class="ui button course_code_copy_btn" data-number="Rei3py">一键复制</a>
+											</div>
+											<div class="sh_extra">
+												<a class="ui button course_apply_info_btn">申请列表</a>
+												<a class="ui button course_edit_btn">编辑</a>
+											</div>
+										</div>
+										<div class="courseitem_actions">
+											<div class="course_progress">
+												<div class="ui small progress warning">
+													<div class="bar"><div class="progress"></div></div>
+													<div class="label">进度 100%</div>
+												</div>
+											</div>
+											<div class="sh_extra">
+												<a class="ui teal basic button course_initial_capital_btn">设置初始资金</a>
+												<a class="ui button course_student_attendance_btn">学生考勤</a>
+												<a class="ui button course_sign_btn">开启签到</a>
+												<a class="ui button course_enter_btn">进入课程</a>
+											</div>
+										</div>
+									</div>
+									<div class="courseitemclose"><i class="window close icon"></i></div>
+								</div>
+								
+								<div class="courseitem courseitemOnGoing">
+									<div class="courseitemimage">
+										<img src="../../img/deadpool.jpeg" alt="">
+									</div>
+									<div class="courseitemcontent">
+										<div class="courseitem_status"></div>
+										<div class="courseitem_header">
+											<h3 class="name">亚马逊运营实践课程-Reeyp</h3>
+										</div>
+										<div class="courseitem_info">
+											<p>负责人：jiaoshi05</p>   
+											<p>
+												<span class="timegroup">开始时间：2021-01-01  12:20:30</span>
+												<span class="timegroup">结束时间：2021-01-20  12:20:30</span>
+											</p>   
+										</div>
+										<div class="courseitem_invite">
+											<div class="course_code">
+												<span class="number">邀请码：<b>Rei3py</b></span>
+												<!-- data-number：作为一键复制的内容 -->
+												<a class="ui button course_code_copy_btn" data-number="Rei3py">一键复制</a>
+											</div>
+											<div class="sh_extra">
+												<a class="ui button course_apply_info_btn">申请列表</a>
+												<a class="ui button course_edit_btn">编辑</a>
+											</div>
+										</div>
+										<div class="courseitem_actions">
+											<div class="course_progress">
+												<div class="ui small progress warning">
+													<div class="bar"><div class="progress"></div></div>
+													<div class="label">进度 100%</div>
+												</div>
+											</div>
+											<div class="sh_extra">
+												<a class="ui button course_student_attendance_btn">学生考勤</a>
+												<a class="ui button course_sign_btn">开启签到</a>
+												<a class="ui button course_enter_btn">进入课程</a>
+											</div>
+										</div>
+									</div>
+									<div class="courseitemclose"><i class="window close icon"></i></div>
+								</div>
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+						<!-- 未开始 -->
+						<div class="ui tab basic segment no-padding" data-tab="courseNotStart">
+							<div class="courselist sh_page_list">
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+						<!-- 进行中 -->
+						<div class="ui tab basic segment no-padding" data-tab="courseOnGoing">
+							<div class="courselist sh_page_list">
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+						<!-- 已结束 -->
+						<div class="ui tab basic segment no-padding" data-tab="courseHasEnd">
+							<div class="courselist sh_page_list">
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+	
+	<!-- 添加课程弹窗 -->
+	<div class="ui large modal course_add_modal">
+		<!-- <span class="actions fr"><i class="remove icon sh_close cancel"></i></span> -->
+		<div class="course_add_header"><h2>添加课程</h2></div>
+		<div class="course_add_content">
+			<form id="course_add_form" class="ui form large">
+				<div class="field">
+					<label><i class="sh_label_req"></i>课程封面：</label>
+					<div class="ui icon input">
+						<input type="hidden" name="courseImage" >
+						<div class="sh_upload w-100">
+							<div class="sh_upload_image fl mr-4">
+								<img class="ui centered small image sh_upload_img" src="../../img/wireframe/image.png" alt="label-image">
+							</div>
+							<div class="sh_upload_list"></div>
+							<div class="sh_upload_action fl">
+								<a class="ui orange button filebtn">选择文件</a>
+								<a class="ui teal button uploadbtn">开始上传</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>课程名称：</label>
+					<div class="ui icon input">
+						<input name="courseName" type="text" maxlength="20" placeholder="请输入课程名称" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>课程类型：</label>
+					<div class="ui icon input">
+						<select name="courseTypes" class="ui fluid dropdown">
+							<option value="">请选择课程类型</option>
+							<option value="1">Male</option>
+							<option value="0">Female</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>开课时间：</label>
+					<div class="ui right icon input">
+						<input name="courseDateStart" class="course_datepicker" data-format="YYYY-MM-DD hh:mm:ss" type="text" placeholder="请选择开课时间" autocomplete="off" readonly>
+						<i class="icon teal calendar alternate outline"></i>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>结课时间：</label>
+					<div class="ui right icon input">
+						<input name="courseDateEnd" class="course_datepicker" data-format="YYYY-MM-DD hh:mm:ss" type="text" placeholder="请选择结课时间" autocomplete="off" readonly>
+						<i class="icon teal calendar alternate outline"></i>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>授课时长：</label>
+					<div class="ui icon input">
+						<input name="courseTeachingTime" type="number" placeholder="请输入授课时长" autocomplete="off">
+					</div>
+				</div>
+				<div class="field mb-0">
+					<label><i class="sh_label_req"></i>设置成绩比例：</label>
+					<div class="ui icon input">
+						<div class="w-100 sh_right py-3"><i class="info circle icon sh_red"></i> 请填写整数、且各项比列之和等于100%</div>
+					</div>
+				</div>
+				<div class="field mb-0">
+					<div class="field">
+						<label><i class="sh_label_req"></i>运营分数比例：</label>
+						<div class="ui icon input">
+							<input name="courseResultsOperating" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>考勤分数比例：</label>
+						<div class="ui icon input">
+							<input name="courseResultsAttendance" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>作业分数比例：</label>
+						<div class="ui icon input">
+							<input name="courseResultsHomework" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>考试成绩比例：</label>
+						<div class="ui icon input">
+							<input name="courseResultsTest" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>利润成绩比例：</label>
+						<div class="ui icon input">
+							<input name="courseResultsProfits" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+						</div>
+					</div>
+					<div class="field mb-0">
+						<div class="field">
+							<div class="ui icon input">
+								<i class="sh_label_req"></i>
+								<input name="courseResultsOtherName" type="text" maxlength="8" placeholder="填写设置比例名称" autocomplete="off">
+							</div>
+						</div>
+						<div class="field">
+							<div class="ui icon input">
+								<input name="courseResultsOtherValue" type="number" min="0" max="100" placeholder="默认比例25%" autocomplete="off">
+							</div>
+						</div>
+					</div>
+					<div class="field w-100" style="justify-content: flex-end;">
+						<a class="ui teal button">确定</a>
+						<a class="ui teal button">取消</a>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>课程概述：</label>
+					<div class="ui icon input">
+						<textarea name="courseSummarize" rows="4" placeholder="请输入课程概述" autocomplete="off"></textarea>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>教学目标：</label>
+					<div class="ui icon input">
+						<textarea name="courseObjectives" rows="4" placeholder="请输入教学目标" autocomplete="off"></textarea>
+					</div>
+				</div>
+				<div class="actions mb-5 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+					<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- 课程初始资金弹窗 -->
+	<div class="ui modal course_initial_capital_modal">
+		<div class="header">
+			<span class="actions fr"><i class="remove icon sh_close cancel"></i></span>
+			<h3 class="sh_green">设置初始资金</h3>
+		</div>
+		<div class="content">
+			<form id="course_initial_capital_form" class="ui form large">
+				<div class="field" style="visibility: hidden; width: 0; height: 0; padding: 0; margin: 0;">
+					<input type="text" />
+				</div>
+				<div class="field">
+					<div class="ui pointing huge teal secondary menu stackable tabular">
+						<a class="item active">产品包1</a>
+						<a class="item">产品包2</a>
+						<a class="item">产品包3</a>
+					</div>
+				</div>
+				<div class="inline field m-0">
+					<div class="ui icon input course_initial_capital_btns">
+						<a class="ui large button" data-value="20">20万</a>
+						<a class="ui large button" data-value="30">30万</a>
+						<a class="ui large button" data-value="-">自定义</a>
+					</div>
+					<div class="ui icon input">
+						<input type="number" name="course_initial_capital_input" readonly="readonly" max="10000" placeholder="请输入初始资金(单位:万)" />
+					</div>
+				</div>
+				<div class="field m-0 p-0" style="font-size: 0;">
+					<div class="ui icon input">
+						<!-- 最终提交初始资金值 -->
+						<input type="hidden" name="course_initial_capital_val" data-validate="courseInitialCapital" value="" />
+					</div>
+				</div>
+				<div class="ui teal header mt-3"><h4>注：金额设置后不可更改</h4></div>
+				<div class="actions mb-3 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">确认</button>
+					<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+				</div>
+				<div class="ui error message"></div>
+			</form>
+		</div>
+	</div>
+	
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//关闭课程事件
+			$(".courseitem .courseitemclose").click(function(){
+				var that = $(this)
+				var courseitem = that.parents('.courseitem')
+				sh.confirm({
+					title: '确定要删除此班级吗？',
+					text: '此操作将无法撤回',
+					type: 'warning',
+				}).then(function(){
+					//确定删除
+					sh.loader(courseitem)
+					setTimeout(function(){
+						sh.loaderclose(courseitem)
+					},500)
+				},function(){
+				})
+			})
+			
+			//一键赋值邀请码事件
+			$(".courseitem .course_code_copy_btn").click(function(){
+				var that = $(this)
+				var courseCode = that.attr('data-number')
+				sh.copytext(courseCode)
+			})
+			
+			//添加课程弹窗事件
+			$(".course_add_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.course_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.course_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//添加课程上传课程封面
+			var uploader = sh.uploadimg('.sh_upload', {
+				auto: false,
+				pick: {
+					id:'.sh_upload .filebtn',  //选择文件的按钮
+					multiple:false, 
+					label: '选择图片'
+				},
+				uploadbtn: '.sh_upload .uploadbtn',
+				server: 'http://platform2.geege.com/student/uploadimg',
+				formData: {},
+				fileVal: 'avatar',
+			},function(res){
+				console.log(res)
+				//上传完成回调
+				if(res.status == 'success'){
+					$("input[name=courseImage]").val()
+					sh.alert.success("上传成功！").then(function(){
+						// 确认回调
+						// location.reload()
+					})
+				}else{
+					sh.alert.error("上传失败！")
+				}
+			});
+			
+			//添加课程日期选择框配置
+			sh.datepicker('.course_datepicker', {
+				minDate: moment(new Date()).format('YYYY-MM-DD hh:mm:ss'),
+			})
+			
+			//添加课程表单提交
+			var $courseAddForm = $('#course_add_form')
+			//登录按钮事件
+			$courseAddForm.find(".button.submit").click(function(e){
+				if($courseAddForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($courseAddForm.parents('.ui.modal'))
+					var formAllFields = $courseAddForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($courseAddForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			//编辑课程弹窗事件
+			$(".course_edit_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.course_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.course_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			
+			//设置初始资金弹窗事件
+			$(".course_initial_capital_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.course_initial_capital_modal').find('.ui.form').form('reset')
+				$('.ui.modal.course_initial_capital_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//初始资金按钮直接输入金额
+			$(".course_initial_capital_btns .ui.button").click(function(){
+				var that = $(this)
+				var thisval = that.attr('data-value')
+				that.addClass('teal').siblings().removeClass('teal')
+				if(thisval == "-"){
+					//自定义进行输入初始资金
+					that.parents('form').find('input[name=course_initial_capital_val]').val('')
+					that.parents('form').find('input[name=course_initial_capital_input]').removeAttr('readonly')
+					that.parents('form').find('input[name=course_initial_capital_input]').blur(function(){
+						var inputval = $(this).val()
+						that.parents('form').find('input[name=course_initial_capital_val]').val(inputval)
+					})
+					return false
+				}
+				that.parents('form').find('input[name=course_initial_capital_input]').attr('readonly', true)
+				that.parents('form').find('input[name=course_initial_capital_val]').val(thisval).trigger('blur')
+			})
+			
+			//初始资金表单提交
+			var $initialCapitalForm = $('#course_initial_capital_form')
+			//登录按钮事件
+			$initialCapitalForm.find(".button.submit").click(function(e){
+				if($initialCapitalForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($initialCapitalForm.parents('.ui.modal'))
+					var formAllFields = $initialCapitalForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($initialCapitalForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

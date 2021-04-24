@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>考试中心-作业-交作业</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span>实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span class="active">考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span>实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui equal width grid stackable padded">
+					
+					<div class="sixteen wide column">
+						<div class="ui basic segment no-padding">
+							<div class="ui left floated header"><h2 class="sh_contitle2">作业</h2></div>
+							<div class="ui right floated header sh_extra"></div>
+						</div>
+					</div>
+					
+					<div class="sixteen wide column pt-0">
+						<div class="ui segments">
+							<div class="ui huge teal inverted segment clearfix mb-0">
+								<span class="fl sh_routerback"><i class="chevron left icon"></i></span>
+								<h3 class="ui left floated header">交作业</h3>
+							</div>
+							<div class="ui segment">
+								<div class="examPaperWrap">
+									<!-- 作业主内容区 -->
+									<div class="examPaperContent">
+										<form class="ui large form">
+											<div class="examPaperContentbox" style="min-height: 300px;">
+												
+												<!-- 论述题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle clearfix">
+																		<span class="displayblock w-100 fl pr-3">作业标题：<span class="desc">为什么一加一等于二？（10分）</span></span>
+																		<span class="displayblock w-25 fl py-2">
+																			<a class="ui teal large fluid button">点击下载附件</a>
+																		</span>
+																	</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui fluid input">
+																				<textarea name="paper-question5-select1" rows="6" placeholder="请输入" maxlength="500" autocomplete="off"></textarea>
+																			</div>
+																			<div class="inline field mt-3">
+																				<label>学生附件：</label>
+																				<div class="ui input">
+																					<a class="ui basic button p-4 mb-1 filebtn">
+																						<input type="file" name="materialfile" value="">
+																						<i class="plus icon m-0"></i>
+																					</a>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+														</ul>
+													</div>
+												</div>
+												<!-- 论述题型分类结束 -->
+												
+											</div>
+											
+											
+											<div class="py-2 sh_center">
+												<button type="button" class="ui teal button submit huge mx-5 my-2 exam_homework_read_submit_btn">提交</button>
+												<button type="button" class="ui orange button huge mx-5 my-2 cancel sh_routerback">取消</button>
+											</div>
+										</form>
+									</div>
+									<!-- 作业退回提示 -->
+									<div class="examPaperBackTip sh_hidden">
+										<img src="../../../img/homeworkbacktip.png" alt="">
+										<div class="ui grey header">学生作业已退回</div>
+									</div>
+									
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			$('.examPaperContent form').delegate('.filebtn input[type=file]', 'change', function (e) {
+			    var that = $(this)
+			    var file = e.currentTarget.files[0]
+			    if(!file){
+			     e.target.value = null
+			     return
+			    }
+			    var filegroup = that.parents('.filebtn')
+			    var filename = file.name
+			    var filesize = file.size
+			    var divname = '<div class="name">'+filename+'</div>'
+			    var divsize = '<div class="desc">'+filesize+'</div>'
+			    var divclose = '<span class="sh_close"><i class="remove icon"></i></span>'
+			    filegroup.hide()
+			    filegroup.before(filegroup.clone().html(divname+divsize+divclose).removeClass('filebtn').addClass('hasfilebtn').show())
+			})
+			
+			//删除附件
+			$('.examPaperContent form').on('click', '.hasfilebtn .sh_close', function (e) {
+				$(this).parents('.hasfilebtn').parent().find('.filebtn').show()
+				$(this).parents('.hasfilebtn').parent().find('.filebtn').find('input[type=file]').val('')
+				$(this).parents('.hasfilebtn').remove()
+			})
+			
+			
+			//作业提交事件
+			$(document).on('click',".examPaperContent .ui.form .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+					},1000)
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

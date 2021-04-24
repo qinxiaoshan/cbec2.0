@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>成绩管理-成绩分布图</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item active" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item active" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding sh_segment">
+						<div class="ui left floated header"><h2 class="sh_contitle">成绩管理</h2></div>
+						<div class="sh_extra w-75 m-0"></div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					
+					<div class="courseNoticewrap p-0 pb-5">
+						<div class="ui equal width grid stackable mb-5">
+							<div class="four wide column">
+								<div class="ui basic large segments">
+									<div class="ui basic segment sh_segment">
+										<div class="ui header"><i class="static icon"></i>总成绩</div>
+										<div class="sh_extra">
+											<div style="height: 37.2px;"></div>
+										</div>
+									</div>
+									<div class="dataInfoWrap">
+										<div class="datainfoitem">
+											<div class="sh_chart basic data-chart-task" id="data-chart-total"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="twelve wide column">
+								<div class="ui basic large segments">
+									<div class="ui basic segment sh_segment">
+										<div class="ui header"><i class="static icon"></i>成绩分布</div>
+										<div class="sh_extra">
+											<form class="ui large form">
+												<div class="inline fields m-0">
+													<div class="inline field">
+														<label class="sh_green">课程：</label>
+														<div class="ui icon input">
+															<select name="" class="ui dropdown">
+																<option value="">全部</option>
+																<option value="1">进行中</option>
+																<option value="0">已完成</option>
+																<option value="0">未开始</option>
+															</select>
+														</div>
+													</div>
+													<div class="field">
+														<label class="sh_green">学生人数：</label>
+														<div class="ui action input sh_green">40人</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="dataInfoWrap resultInfoWrap">
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-attendance"></div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-profit"></div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-operate"></div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-paper"></div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-homework"></div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart basic small data-chart-task" id="data-chart-other"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sixteen wide column">
+								<div class="ui styled accordion fluid stuResultsAccordion">
+									<!-- 实训任务利润分析 -->
+									<div class="item">
+										<div class="title active"><span class="name">实训任务利润分析 <i class="dropdown icon"></i></span></div>
+										<div class="content active">
+											<div class="ui transition">
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="90" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="60" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 试卷分数 -->
+									<div class="item">
+										<div class="title active"><span class="name">试卷分数 <i class="dropdown icon"></i></span></div>
+										<div class="content active">
+											<div class="ui transition">
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="20" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="60" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 作业分数 -->
+									<div class="item">
+										<div class="title active"><span class="name">试卷分数 <i class="dropdown icon"></i></span></div>
+										<div class="content active">
+											<div class="ui transition">
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="20" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+												<div class="stuResultsitem">
+													<div class="content">
+														<div class="info large"><div class="name">第一章 第一节 实训运营</div></div>
+														<div class="desc">提交时间：2020-10-10    12:00</div>
+														<div class="other">
+															<div class="ui small indicating progress" data-value="60" data-total="100">
+																<div class="bar"><div class="progress"></div></div>
+															</div>
+														</div>
+													</div>
+													<div class="actions"><a>查看</a></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript" src="../../plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../plugins/echarts/echarts-liquidfill.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//分数进度条配置
+			$('.stuResultsAccordion .ui.progress').progress({
+				duration : 200,
+				text : {
+					percent : '{percent}分',
+				},
+			});
+			
+			var chartjson = {
+				total: 40,
+				attendance: 60,
+				profit: 50,
+				operate: 90,
+				paper: 30,
+				homework: 10,
+				other: 80,
+			}
+			//业绩排行图表生成方法
+			getResultschart(chartjson)
+			function getResultschart(datalist){
+				datalist = datalist || {}
+				var chartTotal = document.getElementById('data-chart-total');
+				var chartAttendance = document.getElementById('data-chart-attendance');
+				var chartProfit = document.getElementById('data-chart-profit');
+				var chartOperate = document.getElementById('data-chart-operate');
+				var chartPaper = document.getElementById('data-chart-paper');
+				var chartHomework = document.getElementById('data-chart-homework');
+				var chartOther = document.getElementById('data-chart-other');
+				var datatotal = datalist.total/100
+				var dataattendance = datalist.attendance
+				var dataprofit = datalist.profit
+				var dataoperate = datalist.operate
+				var datapaper = datalist.paper
+				var datahomework = datalist.homework
+				var dataother = datalist.other
+				var myTotalChart = echarts.init(chartTotal);
+				var myAttendanceChart = echarts.init(chartAttendance);
+				var myProfitChart = echarts.init(chartProfit);
+				var myOperateChart = echarts.init(chartOperate);
+				var myPaperChart = echarts.init(chartPaper);
+				var myHomeworkChart = echarts.init(chartHomework);
+				var myOtherChart = echarts.init(chartOther);
+				var totaloption = {
+					color: window.chartcolor,
+					tooltip: {
+						formatter (options) {
+							const {seriesName, marker, value} = options
+							return `${marker} ${seriesName} : ${value * 100}分`
+						},
+					},
+					series: [{
+						name: '总成绩',
+						type: 'liquidFill',
+						radius: '85%',
+						center: ['50%', '50%'],
+						shape: 'circle',
+						direction: 'right', // 波浪移动的速度  两个参数  left 从右往左 right 从左往右
+						outline: {
+							borderDistance: 8,
+							itemStyle: {
+								opacity: 1,
+								color: '#c6e5e5',
+								borderWidth: 8,
+								borderColor: '#d8ebea',
+								shadowBlur: 0
+							}
+						},
+						itemStyle: {
+							color: '#94ddda', // 水球显示的背景颜色
+							opacity: 0.7, // 波浪的透明度
+							shadowBlur: 10 // 波浪的阴影范围
+						},
+						emphasis: {
+							itemStyle: {
+								opacity: 0.8 // 鼠标经过波浪颜色的透明度
+							}
+						},
+						backgroundStyle: {
+							color: '#f4fbfb',
+						},
+						label: {
+							position: ['50%', '30%'],
+							formatter (options) {
+								const {value} = options
+								return `${Math.round(value*100)}分`
+							},
+							fontSize: 40,
+							color: '#2cacb5',
+							insideColor: '#c6edec'
+						},
+						data: [datatotal],
+					}]
+				};
+				var scoreoptionfun = function(dname, dvalue, dcolor){
+					return {
+						color: [dcolor],
+						series: [{
+							type: 'gauge',
+							radius: '90%',
+							startAngle: 90,
+							endAngle: -270,
+							pointer: {show: false},
+							splitLine: {show: false},
+							axisTick: {show: false},
+							axisLabel: {show: false},
+							axisLine: { lineStyle: {width: 14}},
+							title: {
+								fontSize: 15,
+								color: '#666666',
+							},
+							progress: {
+								show: true,
+								overlap: false,
+								roundCap: true,
+								clip: false,
+								itemStyle: {
+									borderWidth: 3,
+									borderColor: '#e6ebf8'
+								},
+							},
+							detail: {
+								width: 'auto',
+								height: 'auto',
+								fontSize: 24,
+								color: '#333',
+								formatter: '{value}分'
+							},
+							data: [{
+								value: dvalue,
+								name: dname,
+								title: {
+									offsetCenter: ['0%', '30%']
+								},
+								detail: {
+									offsetCenter: ['0%', '-15%']
+								}
+							}],
+						}]
+					}
+				}
+				
+				var tvalue = datalist.total
+				var gradeicon = $('<div class="sh_gradestatus"></div>')
+				$(chartTotal).find('.sh_gradestatus').remove()
+				switch (tvalue != '' && tvalue >= 0){
+					case tvalue < 60:
+						gradeicon.html('不及格')
+						break;
+					case tvalue < 75:
+						gradeicon.html('中等')
+						break;
+					case tvalue < 90:
+						gradeicon.html('良好')
+						break;
+					case tvalue <= 100:
+						gradeicon.html('优秀')
+						break;
+					default:
+						gradeicon.html('')
+						break;
+				}
+				$(chartTotal).append(gradeicon)
+				totaloption && myTotalChart.setOption(totaloption);
+				myAttendanceChart.setOption(scoreoptionfun('考勤分数',dataattendance, '#f7b500'));
+				myProfitChart.setOption(scoreoptionfun('利润分数',dataprofit, '#1eccd8'));
+				myOperateChart.setOption(scoreoptionfun('运营分数',dataoperate, '#00c492'));
+				myPaperChart.setOption(scoreoptionfun('试卷分数',datapaper, '#36c3fc'));
+				myHomeworkChart.setOption(scoreoptionfun('作业分数',datahomework, '#f99a5b'));
+				myOtherChart.setOption(scoreoptionfun('其他分数',dataother, '#5b76f9'));
+				$(window).resize(function() {
+				    myTotalChart.resize();
+				    myAttendanceChart.resize();
+				    myOperateChart.resize();
+				    myPaperChart.resize();
+				    myHomeworkChart.resize();
+				    myOtherChart.resize();
+				});
+			}
+			
+			
+		})
+	</script>
+</body>
+</html>

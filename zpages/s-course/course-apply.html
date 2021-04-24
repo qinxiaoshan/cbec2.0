@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>我的课程</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item active" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item active" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding">
+						<div class="course_add_modal mt-4">
+							<div class="course_add_header"><h2>邀请码</h2></div>
+							<div class="course_add_content">
+								<form class="ui form large course_join_form">
+									<div class="two fields">
+										<div class="field w-75">
+											<label class="mt-3"><i class="sh_label_req"></i>填写邀请码：</label>
+											<div class="ui icon input">
+												<input name="courseInviteCode" data-validate="courseInviteCode" class="py-4" type="text" maxlength="20" placeholder="请输入邀请码" autocomplete="off">
+											</div>
+										</div>
+										<div class="field w-25">
+											<button type="button" class="ui large button submit mt-3">申请加入课程</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="ui segment no-padding sh_segment">
+						<div class="ui pointing huge teal secondary menu stackable tabular sh_coursetab">
+							<a class="item active" data-tab="courseApply">已申请课程</a>
+							<a class="item" data-tab="courseJoinin">已加入课程</a>
+						</div>
+						<div class="sh_extra">
+							<div class="ui action input ml-3">
+								<input type="text" placeholder="按班级名或邀请码搜索">
+								<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="coursewrap">
+						<!-- 已申请 -->
+						<div class="ui tab basic segment no-padding active" data-tab="courseApply">
+							<div class="courselist sh_page_list">
+								
+								<!-- 班级三种状态增加不同类名 未开始：courseitemNotStart 进行中：courseitemOnGoing 已结束：courseitemHasEnd -->
+								<!-- 列表循环项 -->
+								<div class="courseitem courseitemHasEnd">
+									<div class="courseitemimage">
+										<img src="../../img/deadpool.jpeg" alt="">
+									</div>
+									<div class="courseitemcontent">
+										<div class="courseitem_status"></div>
+										<div class="courseitem_header">
+											<h3 class="name">亚马逊运营实践课程-Reeyp</h3>
+										</div>
+										<div class="courseitem_info">
+											<p>负责人：jiaoshi05</p>   
+											<p>
+												<span class="timegroup">开始时间：2021-01-01  12:20:30</span>
+												<span class="timegroup">结束时间：2021-01-20  12:20:30</span>
+											</p>   										</div>
+										<div class="courseitem_invite">
+											<div class="course_code">
+												<span class="number">初始资金：￥<b>500,000</b></span>
+											</div>
+										</div>
+										<div class="courseitem_actions">
+											<div class="course_progress">
+												<div class="ui small yellow progress" data-value="20" data-total="100">
+													<div class="bar"></div><div class="label">进度 0 %</div>
+												</div>
+											</div>
+											<div class="sh_extra">
+												<a class="ui button course_rejoin_btn">重新申请</a>
+												<form class="ui form large sh_form course_join_form" style="display: none;">
+													<div class="two fields">
+														<div class="field w-75">
+															<label><i class="sh_label_req"></i>填写邀请码：</label>
+															<div class="ui icon input">
+																<input name="courseInviteCode" data-validate="courseInviteCode" type="text" maxlength="20" placeholder="请输入邀请码" autocomplete="off">
+															</div>
+														</div>
+														<div class="field w-25">
+															<button type="button" class="ui button submit">申请</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="courseitem courseitemOnGoing">
+									<div class="courseitemimage">
+										<img src="../../img/deadpool.jpeg" alt="">
+									</div>
+									<div class="courseitemcontent">
+										<div class="courseitem_status"></div>
+										<div class="courseitem_header">
+											<h3 class="name">亚马逊运营实践课程-Reeyp</h3>
+										</div>
+										<div class="courseitem_info">
+											<p>负责人：jiaoshi05</p>   
+											<p>
+												<span class="timegroup">开始时间：2021-01-01  12:20:30</span>
+												<span class="timegroup">结束时间：2021-01-20  12:20:30</span>
+											</p>   
+										</div>
+										<div class="courseitem_invite">
+											<div class="course_code">
+												<span class="number">初始资金：￥<b>500,000</b></span>
+											</div>
+											<div class="sh_extra">
+												<div class="w-100 mb-2 sh_right">
+													<h4 class="ui teal header">入班申请被拒绝</h4>
+												</div>
+											</div>
+										</div>
+										<div class="courseitem_actions">
+											<div class="course_progress">
+												<div class="ui small yellow progress" data-value="20" data-total="100">
+													<div class="bar"></div><div class="label">进度 0 %</div>
+												</div>
+											</div>
+											<div class="sh_extra">
+												<a class="ui button course_rejoin_btn">重新申请</a>
+												<form class="ui form large sh_form course_join_form" style="display: none;">
+													<div class="two fields">
+														<div class="field w-75">
+															<label><i class="sh_label_req"></i>填写邀请码：</label>
+															<div class="ui icon input">
+																<input name="courseInviteCode" data-validate="courseInviteCode" type="text" maxlength="20" placeholder="请输入邀请码" autocomplete="off">
+															</div>
+														</div>
+														<div class="field w-25">
+															<button type="button" class="ui button submit">申请</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="courseitem courseitemNotStart">
+									<div class="courseitemimage">
+										<img src="../../img/deadpool.jpeg" alt="">
+									</div>
+									<div class="courseitemcontent">
+										<div class="courseitem_status"></div>
+										<div class="courseitem_header">
+											<h3 class="name">亚马逊运营实践课程-Reeyp</h3>
+										</div>
+										<div class="courseitem_info">
+											<p>负责人：jiaoshi05</p>   
+											<p>
+												<span class="timegroup">开始时间：2021-01-01  12:20:30</span>
+												<span class="timegroup">结束时间：2021-01-20  12:20:30</span>
+											</p>   
+										</div>
+										<div class="courseitem_invite">
+											<div class="course_code">
+												<span class="number">初始资金：未设置<b></b></span>
+											</div>
+										</div>
+										<div class="courseitem_actions">
+											<div class="course_progress">
+												<div class="ui small yellow progress" data-value="0" data-total="100">
+													<div class="bar"></div><div class="label">进度 0 %</div>
+												</div>
+											</div>
+											<div class="sh_extra">
+												<h4 class="ui teal header">等待教师审核</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+						<!-- 已加入 -->
+						<div class="ui tab basic segment no-padding" data-tab="courseJoinin">
+							<div class="courselist sh_page_list">
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar></div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+		
+			//邀请码加入课程事件
+			$(document).on('click',".course_join_form .button.submit",function(e){
+				var that = $(this)
+				var $courseJoinForm = that.parents("form")
+				console.log($courseJoinForm)
+				if($courseJoinForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($courseJoinForm)
+					var formAllFields = $courseJoinForm.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($courseJoinForm)
+					},1000)
+				}
+			})
+			
+			//重新申请转换邀请码事件
+			$(".course_rejoin_btn").click(function(){
+				var that = $(this)
+				var courseitem = that.parents('.courseitem')
+				if(courseitem.hasClass('courseitemHasEnd')){
+					sh.alert.info("该课程已结束，不能申请")
+					return false
+				}
+				that.hide()
+				that.parent().find('.course_join_form').show()
+			})
+			
+		})
+	</script>
+</body>
+</html>

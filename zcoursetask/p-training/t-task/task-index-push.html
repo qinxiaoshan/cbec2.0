@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>实训任务-已推送</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span class="active">实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui raised segment my-3 coursesegment">
+					<a class="ui yellow ribbon contitle label">实训任务</a>
+					
+					<div class="ui basic segment no-padding courseMaterialinfo">
+						<div class="ui pointing large teal secondary menu stackable tabular sh_coursetab">
+							<a class="item" data-tab="taskAll">系统任务</a>
+							<a class="item" data-tab="taskMy">我的任务</a>
+							<a class="item active" data-tab="taskPush">已推送</a>
+						</div>
+					</div>
+					
+					<div class="courseTaskChapterlist my-4">
+						<span class="label">所属章节：</span>
+						<ul>
+							<li><span>全部</span></li>
+							<li><span>第一章</span></li>
+							<li class="active"><span>第二章</span></li>
+							<li><span>第三章</span></li>
+							<li><span>第四章</span></li>
+						</ul>
+					</div>
+					
+					<div class="sixteen wide column">
+						
+						<div class="ui styled accordion fluid taskSystemAccordion">
+							<div class="item">
+								<div class="title active"><span class="name">第一课时</span><i class="dropdown icon"></i></div>
+								<div class="content active">
+									<div class="ui transition">
+										<div class="taskSystemitem">
+											<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+											<div class="content">
+												<div class="info">
+													<div class="name">实训动员</div>
+													<div class="time">任务时长: 90分钟</div>
+													<div class="leader">负责人: 教师</div>
+												</div>
+												<div class="other">
+													<span>任务进度：</span>
+													<div class="ui small yellow progress" data-value="20" data-total="100">
+														<div class="bar"><div class="progress"></div></div>
+													</div>
+												</div>
+											</div>
+											<div class="actions">
+												<a>查看<div class="floating ui small label sh_red"><i class="bell icon m-0"></i></div></a>
+												<a>已推送</a>
+												<a class="teal">任务追踪</a>
+											</div>
+										</div>
+										<div class="taskSystemitem">
+											<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+											<div class="content">
+												<div class="info">
+													<div class="name">实训动员</div>
+													<div class="time">任务时长: 90分钟</div>
+													<div class="leader">负责人: 教师</div>
+												</div>
+												<div class="other">
+													<span>任务进度：</span>
+													<div class="ui small yellow progress" data-value="20" data-total="100">
+														<div class="bar"><div class="progress"></div></div>
+													</div>
+												</div>
+											</div>
+											<div class="actions">
+												<a>查看</a>
+												<a>已推送</a>
+												<a class="teal">任务追踪</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="title active"><span class="name">第二课时</span><i class="dropdown icon"></i></div>
+								<div class="content active">
+									<div class="ui transition">
+										<div class="taskSystemitem">
+											<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+											<div class="content">
+												<div class="info">
+													<div class="name">实训动员</div>
+													<div class="time">任务时长: 90分钟</div>
+													<div class="leader">负责人: 教师</div>
+												</div>
+												<div class="other">
+													<span>任务进度：</span>
+													<div class="ui small yellow progress" data-value="20" data-total="100">
+														<div class="bar"><div class="progress"></div></div>
+													</div>
+												</div>
+											</div>
+											<div class="actions">
+												<a>查看</a>
+												<a>已推送</a>
+												<a class="teal">任务追踪</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//初始化手风琴
+			$('.ui.accordion.taskSystemAccordion').accordion({
+				exclusive: false,
+			});
+			
+		})
+	</script>
+</body>
+</html>

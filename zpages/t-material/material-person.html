@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>素材中心-我的资源</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item active" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item active" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding">
+						<div class="ui left floated header"><h2 class="sh_contitle">素材中心</h2></div>
+						<div class="ui right floated header sh_extra">
+							<div class="ui small action input ml-3">
+								<input type="text" placeholder="请输入资源名称">
+								<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+							</div>
+							<button class="ui teal large button ml-3 mr-0 material_add_btn">添加资源</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="courseMaterialwrap">
+						<div class="ui basic segment no-padding courseMaterialinfo">
+							<div class="ui pointing large teal secondary menu stackable tabular sh_coursetab">
+								<a class="item" data-tab="materialAll">系统资源</a>
+								<a class="item active" data-tab="materialMy">我的资源</a>
+							</div>
+						</div>
+						<div class="courseMateriallist">
+							<div class="materiallist sh_page_list mb-5">
+								<div class="ui card materialitem">
+									<div class="image">
+										<img src="../../img/deadpool.jpeg" data-src="../../img/banner_icon2.png" class="transition visible">
+									</div>
+									<div class="content">
+										<a class="header">亚马逊运营资源</a>
+										<div class="meta">
+											<span class="">资源类型：案例分析</span>
+										</div>
+										<div class="description">
+											如果你正在寻找装饰你的家或办公室的好方法，那么你也知道
+										</div>
+									</div>
+									<div class="extra content">
+										<a class="ui teal large button">编辑</a>
+										<a class="ui large button">查看</a>
+									</div>
+								</div>
+								
+							</div>
+							<div class="sh_page_container sh_center" data-pagesize="8" data-toolbar data-link></div>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+	
+	<!-- 添加资源弹窗 -->
+	<div class="ui large modal course_add_modal">
+		<!-- <span class="actions fr"><i class="remove icon sh_close cancel"></i></span> -->
+		<div class="course_add_header"><h2>添加资源</h2></div>
+		<div class="course_add_content">
+			<form id="course_add_form" class="ui form large">
+				<div class="field">
+					<label><i class="sh_label_req"></i>资源图片：</label>
+					<div class="ui icon input">
+						<input type="hidden" name="materialImage" data-validate="materialImage" >
+						<div class="sh_upload w-100">
+							<div class="sh_upload_image fl mr-4">
+								<img class="ui centered small image sh_upload_img" src="../../img/wireframe/image.png" alt="label-image">
+							</div>
+							<div class="sh_upload_list"></div>
+							<div class="sh_upload_action fl">
+								<a class="ui orange button filebtn">选择文件</a>
+								<a class="ui teal button uploadbtn">开始上传</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>资源名称：</label>
+					<div class="ui icon input">
+						<input name="materialName" data-validate="materialName" type="text" maxlength="20" placeholder="请输入资源名称" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>资源类型：</label>
+					<div class="ui icon input">
+						<select name="materialTypes" data-validate="materialTypes" class="ui fluid dropdown">
+							<option value="">请选择资源类型</option>
+							<option value="1">Male</option>
+							<option value="0">Female</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>是否对学生公开：</label>
+					<div class="ui icon input">
+						<div class="ui radio checkbox mr-4">
+							<input type="radio" name="materialOpen" data-validate="materialOpen" value="1" checked="checked">
+							<label class="coloring orange">是</label>
+						</div>
+						<div class="ui radio checkbox mr-4">
+							<input type="radio" name="materialOpen" data-validate="materialOpen" value="2">
+							<label class="coloring orange">否</label>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>附件上传：</label>
+					<div class="ui icon input">
+						<span class="ui basic button p-4 mb-1 filebtn">
+							<input type="file" name="materialfile" value="" />
+							<i class="plus icon m-0"></i>
+						</span>
+					</div>
+				</div>
+				<div class="actions mb-5 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+					<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<style>
+		.course_add_modal .course_add_content .ui.form .field{ align-items: center; }
+		.course_add_modal .course_add_content .ui.form .field > .prompt{ margin-left: 130px; }
+		.course_add_modal .course_add_content .ui.form .field > .ui.input{ width: calc(100% - 130px); flex-wrap: wrap; }
+		.course_add_modal .course_add_content .ui.form .field > label{ width: 130px; }
+	</style>
+	
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//添加资源弹窗事件
+			$(".material_add_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.course_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.course_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//添加资源上传资源封面
+			var uploader = sh.uploadimg('.sh_upload', {
+				auto: false,
+				pick: {
+					id:'.sh_upload .filebtn',  //选择文件的按钮
+					multiple:false, 
+					label: '选择图片'
+				},
+				uploadbtn: '.sh_upload .uploadbtn',
+				server: 'http://platform2.geege.com/student/uploadimg',
+				formData: {},
+				fileVal: 'avatar',
+			},function(res){
+				console.log(res)
+				//上传完成回调
+				if(res.status == 'success'){
+					$("input[name=materialImage]").val(res.file.name).trigger('blur')
+					sh.alert.success("上传成功！").then(function(){
+						// 确认回调
+						// location.reload()
+					})
+				}else{
+					sh.alert.error("上传失败！")
+				}
+			});
+
+			
+			//添加资源表单提交
+			var $courseAddForm = $('#course_add_form')
+			//登录按钮事件
+			$courseAddForm.find(".button.submit").click(function(e){
+				if($courseAddForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($courseAddForm.parents('.ui.modal'))
+					var formAllFields = $courseAddForm.form('get values')
+					console.log(formAllFields)
+					//此处方法无法获取动态添加input file对象同样无法效验，需另行方法获取进行判断
+					
+					setTimeout(function(){
+						sh.loaderclose($courseAddForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			
+			//添加资源附件选择事件
+			var filenum = 1
+			$('#course_add_form').delegate('.filebtn input[type=file]', 'change', function (e) {
+				var that = $(this)
+				var file = e.currentTarget.files[0]
+				if(!file){
+					e.target.value = null
+					return
+				}
+				var filegroup = that.parents('.filebtn')
+				var newfilegroup = '<span class="ui basic button p-4 mb-1 filebtn"><input type="file" name="materialfile'+filenum+'" value="" /><i class="plus icon m-0"></i></span>'
+				filegroup.after(newfilegroup)
+				var filename = file.name
+				var filesize = file.size
+				var divname = '<div class="name">'+filename+'</div>'
+				var divsize = '<div class="desc">'+filesize+'</div>'
+				var divclose = '<span class="sh_close"><i class="remove icon"></i></span>'
+				filegroup.removeClass('filebtn').addClass('hasfilebtn')
+				filegroup.find('i').replaceWith(divname+divsize+divclose)
+				filenum ++
+			})
+			
+			//删除资源附件
+			$('#course_add_form').on('click', '.hasfilebtn .sh_close', function (e) {
+				$(this).parents('.hasfilebtn').remove()
+			})
+			
+		})
+	</script>
+</body>
+</html>

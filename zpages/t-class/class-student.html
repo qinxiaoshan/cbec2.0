@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>班级管理-学员管理</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item" href="">课程管理</a>
+						<a class="item active" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item" href="">课程管理</a>
+					<a class="item active" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding">
+						<div class="ui left floated header"><h2 class="sh_contitle">班级管理</h2></div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="ui huge segment clearfix mb-0">
+						<span class="fl sh_routerback"><i class="chevron left icon"></i></span>
+						<h3 class="ui left floated teal header">亚马逊运营1班</h3>
+					</div>
+					<div class="courseStudentwrap courseApplywrap">
+							
+							<div class="ui basic segment courseStudentinfo">
+								<div class="ui left floated header">
+									<div class="courseStudentinfotext">学员列表</div>
+								</div>
+								<div class="fr sh_extra">
+									<div class="ui action input ml-3">
+										<input type="text" placeholder="请输入名称">
+										<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+									</div>
+									<a class="ui large icon button ml-3 class_student_add_btn">添加</a>
+									<a class="ui large icon button ml-3 class_student_batchremove_btn">批量删除</a>
+									<a class="ui large icon button ml-3 class_student_batchadjust_btn">批量调班</a>
+									<a class="ui large icon button ml-3 class_student_export_btn">批量导出</a>
+									<a class="ui large teal icon button ml-3 class_student_import_btn">导入</a>
+								</div>
+							</div>
+							
+							<div class="courseApplylist">
+								<table class="sh_datatable2 ui very structured basic table">
+									<thead>
+										<tr>
+											<th>
+												<div class="ui checkbox"><input type="checkbox" name="checkall" class="sh_checkall"><label class="coloring orange"></label></div>
+											</th>
+											<th>姓名</th>
+											<th>学号</th>
+											<th>联系电话</th>
+											<th>专业</th>
+											<th>邮箱</th>
+											<th width="300px">操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												<div class="ui checkbox"><input type="checkbox" name="checkitem" class="sh_checkitem"><label class="coloring orange"></label></div>
+											</td>
+											<td>张晓昊</td>
+											<td>(08) 3082 6765</td>
+											<td>运营1班</td>
+											<td>2020-02-10 12:01:22</td>
+											<td>2020-02-10 12:01:22</td>
+											<td>
+												<a class="ui basic button class_student_edit_btn">编辑</a>
+												<a class="ui basic button class_student_adjust_btn">调班</a>
+												<a class="ui basic button class_student_remove_btn">删除</a>
+												<a class="ui basic button class_student_reset_btn">重置密码</a>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="ui checkbox"><input type="checkbox" name="checkitem" class="sh_checkitem"><label class="coloring orange"></label></div>
+											</td>
+											<td>Patrick Paul</td>
+											<td>(03) 1260 0845</td>
+											<td>Ut Nec Institute</td>
+											<td>French Southern Territories</td>
+											<td>French Southern Territories</td>
+											<td>
+												<a class="ui basic button class_student_edit_btn">编辑</a>
+												<a class="ui basic button class_student_adjust_btn">调班</a>
+												<a class="ui basic button class_student_remove_btn">删除</a>
+												<a class="ui basic button class_student_reset_btn">重置密码</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+	
+	<!-- 添加学生弹窗 -->
+	<div class="ui large modal class_add_modal class_student_add_modal">
+		<span class="actions fr"><i class="remove icon sh_close cancel"></i></span>
+		<div class="class_add_header"><h2>添加学员</h2></div>
+		<div class="class_add_content">
+			<form id="class_add_form" class="ui form large">
+				<div class="field" style="visibility: hidden; width: 0; height: 0; padding: 0; margin: 0;">
+					<input type="text" />
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>学生姓名：</label>
+					<div class="ui icon input">
+						<input name="classStudentNameValue" data-validate="classStudentName" type="text" maxlength="20" placeholder="请输入学生姓名" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>学号：</label>
+					<div class="ui icon input">
+						<input name="classStudentNumberValue" data-validate="classStudentNumber" type="text" maxlength="20" placeholder="请输入学号" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>手机号：</label>
+					<div class="ui icon input">
+						<input name="classStudentTelphoneValue" data-validate="userTelphone" type="text" maxlength="20" placeholder="请输入手机号" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>专业名称：</label>
+					<div class="ui icon input">
+						<input name="classStudentMajorValue" data-validate="classStudentMajor" type="text" maxlength="20" placeholder="请输入专业名称" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>邮箱：</label>
+					<div class="ui icon input">
+						<input name="classStudentPostCodeValue" data-validate="userPostCode" type="text" maxlength="20" placeholder="请输入邮箱" autocomplete="off">
+					</div>
+				</div>
+				<div class="actions mb-5 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+					<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- 编辑学生弹窗 -->
+	<div class="ui large modal class_add_modal class_student_edit_modal">
+		<span class="actions fr"><i class="remove icon sh_close cancel"></i></span>
+		<div class="class_add_header"><h2>编辑学员信息</h2></div>
+		<div class="class_add_content">
+			<form id="class_edit_form" class="ui form large">
+				<div class="field" style="visibility: hidden; width: 0; height: 0; padding: 0; margin: 0;">
+					<input type="text" />
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>学生姓名：</label>
+					<div class="ui icon input">
+						<input name="classStudentNameValue" data-validate="classStudentName" type="text" maxlength="20" placeholder="请输入学生姓名" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>学号：</label>
+					<div class="ui icon input">
+						<input name="classStudentNumberValue" data-validate="classStudentNumber" type="text" maxlength="20" placeholder="请输入学号" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>手机号：</label>
+					<div class="ui icon input">
+						<input name="classStudentTelphoneValue" data-validate="userTelphone" type="text" maxlength="20" placeholder="请输入手机号" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>专业名称：</label>
+					<div class="ui icon input">
+						<input name="classStudentMajorValue" data-validate="classStudentMajor" type="text" maxlength="20" placeholder="请输入专业名称" autocomplete="off">
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>邮箱：</label>
+					<div class="ui icon input">
+						<input name="classStudentPostCodeValue" data-validate="userPostCode" type="text" maxlength="20" placeholder="请输入邮箱" autocomplete="off">
+					</div>
+				</div>
+				<div class="actions mb-5 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+					<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- 学生调班弹窗 -->
+	<div class="ui large modal class_add_modal class_student_changeclass_modal">
+		<span class="actions fr"><i class="remove icon sh_close cancel"></i></span>
+		<div class="class_add_header"><h2>学生调班</h2></div>
+		<div class="class_add_content">
+			<form id="class_changeclass_form" class="ui form large">
+				<div class="field" style="visibility: hidden; width: 0; height: 0; padding: 0; margin: 0;">
+					<input type="text" />
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>目前班级：</label>
+					<div class="ui icon input">
+						<select name="" data-validate="className" class="ui fluid dropdown">
+							<option value="">请选择班级</option>
+							<option value="1">亚马逊运营1班</option>
+							<option value="0">亚马逊运营2班</option>
+						</select>
+					</div>
+				</div>
+				<div class="field">
+					<label><i class="sh_label_req"></i>调班原因：</label>
+					<div class="ui icon input">
+						<textarea name="" data-validate="classReason" rows="4" placeholder="请输入调班原因" autocomplete="off"></textarea>
+					</div>
+				</div>
+				<div class="actions mb-5 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+					<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	<!-- 学生导入弹窗 -->
+	<div class="ui modal class_add_modal class_student_import_modal">
+		<div class="header">
+			<span class="actions fr"><i class="remove icon sh_close cancel"></i></span>
+			<h3 class="sh_green">上传学员信息相关的Excel表格</h3>
+		</div>
+		<div class="class_add_content">
+			<form id="class_student_import_form" class="ui form large">
+				<div class="field" style="visibility: hidden; width: 0; height: 0; padding: 0; margin: 0;">
+					<input type="text" />
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<div class="ui icon input">
+							<span class="mr-5">
+								<span class="ui teal button filebtn">
+									<input type="file" name="classstudentfile" data-validate="fileobj" accept=".xlsx" value="" />
+									选择文件
+								</span>
+								<span class="filename">未选择任何文件</span>
+							</span>
+						</div>
+					</div>
+					<div class="field">
+						<span class="ui teal basic button">下载模板</span>
+					</div>
+				</div>
+				<div class="actions mb-3 py-2 sh_center">
+					<button type="button" class="ui teal button submit huge mx-5 my-2">确认</button>
+					<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+				</div>
+				<div class="ui error message"></div>
+			</form>
+		</div>
+	</div>
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//关闭班级事件
+			$(".classitem .classitemclose").click(function(){
+				var that = $(this)
+				var classitem = that.parents('.classitem')
+				sh.confirm({
+					title: '确定要删除此班级吗？',
+					text: '此操作将无法撤回',
+					type: 'warning',
+				}).then(function(){
+					//确定删除
+					sh.loader(classitem)
+					setTimeout(function(){
+						sh.loaderclose(classitem)
+					},500)
+				},function(){
+				})
+			})
+
+			
+			//添加学生弹窗事件
+			$(".class_student_add_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.class_student_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.class_student_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+
+			
+			//添加班级学生表单提交
+			var $classAddForm = $('#class_add_form')
+			//登录按钮事件
+			$classAddForm.find(".button.submit").click(function(e){
+				if($classAddForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($classAddForm.parents('.ui.modal'))
+					var formAllFields = $classAddForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($classAddForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			//编辑学生弹窗事件
+			$(".class_student_edit_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.class_student_edit_modal').find('.ui.form').form('reset')
+				$('.ui.modal.class_student_edit_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//编辑班级学生表单提交
+			var $classEditForm = $('#class_edit_form')
+			//登录按钮事件
+			$classEditForm.find(".button.submit").click(function(e){
+				if($classEditForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($classEditForm.parents('.ui.modal'))
+					var formAllFields = $classEditForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($classEditForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			
+			//学员调班
+			$(".class_student_adjust_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.class_student_changeclass_modal').find('.ui.form').form('reset')
+				$('.ui.modal.class_student_changeclass_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//学员调班表单提交
+			var $classChangeForm = $('#class_changeclass_form')
+			//登录按钮事件
+			$classChangeForm.find(".button.submit").click(function(e){
+				if($classChangeForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($classChangeForm.parents('.ui.modal'))
+					var formAllFields = $classChangeForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($classChangeForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			
+			//学员删除
+			$(".class_student_remove_btn").click(function(){
+				var that = $(this)
+				var thistable = that.parents('table')
+				var rowitem = that.parents('tr')
+				sh.confirm({
+					title: '确定要删除此学生吗？',
+					text: '此操作将无法撤回',
+					type: 'warning',
+				}).then(function(){
+					//确定删除
+					sh.loader(thistable)
+					setTimeout(function(){
+						sh.loaderclose(thistable)
+						sh.alert.deletetip('删除成功')
+					},500)
+				},function(){
+				})
+			})
+			
+			
+			//学员导入
+			$(".class_student_import_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.class_student_import_modal').find('.ui.form').form('reset')
+				$('.ui.modal.class_student_import_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//学员表格选择事件
+			$('#class_student_import_form').delegate('input[name="classstudentfile"]', 'change', function (e) {
+				var that = $(this)
+				var file = e.currentTarget.files[0]
+				if(!file){
+					e.target.value = null
+					return
+				}
+				if (!/\.(xlsx|XLSX)$/.test(file.name)) {
+					sh.alert.error('请上传正确格式文件')
+					e.target.value = null
+					return
+				}
+			})
+			
+			//学员表格表单提交
+			var $classStudentImportForm = $('#class_student_import_form')
+			//登录按钮事件
+			$classStudentImportForm.find(".button.submit").click(function(e){
+				if($classStudentImportForm.form('is valid')) {
+					//表单验证通过
+					sh.loader($classStudentImportForm.parents('.ui.modal'))
+					var formAllFields = $classStudentImportForm.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($classStudentImportForm.parents('.ui.modal'))
+					},1000)
+				}
+			})
+			
+			
+		})
+	</script>
+</body>
+</html>

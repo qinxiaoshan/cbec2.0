@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>成绩管理-成绩分布图</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item active" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item active" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding sh_segment">
+						<div class="ui left floated header"><h2 class="sh_contitle">成绩管理</h2></div>
+						<div class="sh_extra w-75 m-0">
+							<form class="ui large form">
+								<div class="inline fields">
+									<div class="inline field">
+										<label class="sh_green">课程：</label>
+										<div class="ui icon input">
+											<select name="" class="ui dropdown">
+												<option value="">全部</option>
+												<option value="1">进行中</option>
+												<option value="0">已完成</option>
+												<option value="0">未开始</option>
+											</select>
+										</div>
+									</div>
+									<div class="field">
+										<label class="sh_green">学生人数：</label>
+										<div class="ui action input sh_green">40人</div>
+									</div>
+									<div class="field p-0">
+										<button class="ui large teal button results_export_btn">导出成绩</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="ui teal2 inverted segment no-padding sh_segment mb-0">
+						<div class="ui pointing secondary menu stackable tabular sh_coursetab">
+							<a class="item active" data-tab="resultsTab1">成绩分布图</a>
+							<a class="item" data-tab="resultsTab2">成绩总览</a>
+							<a class="item" data-tab="resultsTab3">考勤分数</a>
+							<a class="item" data-tab="resultsTab4">任务分数</a>
+							<a class="item" data-tab="resultsTab5">运营分数</a>
+							<a class="item" data-tab="resultsTab6">考试分数</a>
+							<a class="item" data-tab="resultsTab7">作业分数</a>
+							<a class="item" data-tab="resultsTab8">其他</a>
+						</div>
+					</div>
+					<div class="courseStudentwrap p-0">
+						<!-- 成绩分布图 -->
+						<div class="ui tab basic segment no-padding mt-0 active" data-tab="resultsTab1">
+							<div class="ui equal width grid stackable p-5">
+								<div class="four wide column">
+									<div class="resultsStaticInfo">
+										<ul>
+											<li>
+												<i class="average icon"></i><label>平均分数</label><div class="text"><u>89.5</u>分</div>
+												<div class="other">
+													<div>最高分 <u class="sh_yellow"><i class="caret up icon"></i>41</u></div>
+													<div>最低分 <u class="sh_green"><i class="caret down icon"></i>11</u></div>
+												</div>
+											</li>
+											<li><i class="total icon"></i><label>总人数</label><div class="text"><u>64</u>人</div></li>
+											<li><i class="pass icon"></i><label>及格率</label><div class="text"><u>75</u>%</div></li>
+										</ul>
+									</div>
+								</div>
+								<div class="twelve wide column">
+									<div class="ui basic fluid card no-padding">
+										<div class="content">
+											<div class="ui fl header mb-0 mt-2">分数段占比</div>
+											<div class="fr">
+												<div class="ui icon button sh_popup"
+													data-title="分数段占比:"
+													data-content="59.9属于0-59区间的，学生分数取整数记入统计"
+												>
+													<i class="info circle icon sh_popup"></i>
+												</div>
+											</div>
+										</div>
+										<div class="content px-0">
+											<div class="ui equal width grid stackable padded">
+												<div class="nine wide column">
+													<div class="sh_chart basic huge" id="data-chart-results"></div>
+												</div>
+												<div class="seven wide column">
+													<div class="sh_chart scroll basic huge" id="data-chart-results-desc"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 成绩总览 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab2">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="false">考勤分数</th>
+													<th data-sortable="false">任务分数</th>
+													<th data-sortable="false">运营分数</th>
+													<th data-sortable="false">考试分数</th>
+													<th data-sortable="false">作业分数</th>
+													<th data-sortable="false">其他分数</th>
+													<th data-sortable="true">最终成绩</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>30</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 考勤成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab3">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">考勤分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 任务成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab4">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">任务分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 运营成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab5">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">运营分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 考试成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab6">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">考试分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 作业成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab7">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">作业分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 其他成绩 -->
+						<div class="ui tab basic segment no-padding mt-0" data-tab="resultsTab8">
+							<div class="ui equal width grid stackable pt-4 pb-5">
+								<div class="sixteen wide column">
+									<div class="sh_tablebox mb-5">
+										<table class="sh_datatable4 ui very basic table">
+											<thead>
+												<tr>
+													<th data-sortable="false">序号</th>
+													<th data-sortable="false">学号</th>
+													<th data-sortable="false">姓名</th>
+													<th data-sortable="false">班级</th>
+													<th data-sortable="true">其他分数</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>30</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>20518181981</td>
+													<td>张晓昊</td>
+													<td>运营1班</td>
+													<td>40</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/jquery.address-1.6.min.js"></script>
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<script type="text/javascript" src="../../plugins/echarts/echarts.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			var chartjson = [
+				{value: 52, name: '0-59'},
+				{value: 20, name: '60-74'},
+				{value: 15, name: '75-89'},
+				{value: 4, name: '90-100'},
+			]
+			//业绩排行图表生成方法
+			getResultschart(chartjson)
+			function getResultschart(datalist){
+				datalist = datalist || []
+				var chartDom = document.getElementById('data-chart-results');
+				var chartDesc = $("#data-chart-results-desc")
+				var chartDescHtml = $('<ul class="chartDesc"></ul>')
+				var total = 0
+				if(datalist.length == 0) return false
+				$.each(datalist, function(i,item){
+					total += item.value
+				})
+				$.each(datalist, function(i,item){
+					var label = '<a class="ui empty circular label" style="background-color: '+window.chartcolor[i]+'"></a>'
+					var itempercent = parseFloat(item.value/total*100).toFixed(2) + '%'
+					var itemname = label + item.name + '分'
+					var itemvalue = item.value + '人'
+					chartDescHtml.append('<li><div class="name">'+itemname+'</div><div class="percent">'+itempercent+'</div><div class="value">'+itemvalue+'</div></li>')
+				})
+				chartDesc.html(chartDescHtml)
+				var myChart = echarts.init(chartDom);
+				var option;
+				option = {
+					color: window.chartcolor,
+					title: {
+						left: 'center',
+						text: '',
+						textStyle: {
+							color: '#666',
+							fontSize: '15',
+						},
+					},
+					grid: {
+						top: '0',
+						left: '70',
+						right: '3%',
+						bottom: '0',
+					},
+					tooltip: {
+						trigger: 'item',
+						formatter: function (item) {
+							var pvalue = item.value ? item.value+' 人' : '-'
+							return item.name+'分'+'<br>'+item.marker+' '+pvalue
+						}
+					},
+					legend: {
+						show: false,
+						orient: 'vertical',
+						right: 5,
+						top: 100,
+						bottom: 20,
+						itemWidth: 15,
+						itemHeight: 15,
+					},
+					series: [{
+						name: '',
+						type: 'pie',
+						radius: [20, 150],
+						center: ['50%', '50%'],
+						selectedMode: 'single',
+						roseType: 'radius',
+						// roseType: 'area',
+						label: {
+							// formatter: '{b}: {@2012} ({d}%)',
+							// color: '#fff',
+							formatter: '{d}%',
+							position: 'inside',
+							fontSize: 14,
+						},
+						emphasis: {
+							itemStyle: {
+								shadowBlur: 10,
+								shadowOffsetX: 0,
+								shadowColor: 'rgba(0, 0, 0, 0.5)'
+							}
+						},
+						data: datalist,
+					}]
+				};
+				option && myChart.setOption(option);
+				$(window).resize(function() {
+				    myChart.resize();
+				});
+			}
+			
+			
+		})
+	</script>
+</body>
+</html>

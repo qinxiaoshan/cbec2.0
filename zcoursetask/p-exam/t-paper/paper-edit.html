@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>考试中心-试卷-编辑试卷</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span>实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span class="active">考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span>实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui equal width grid stackable padded">
+					
+					<div class="sixteen wide column">
+						<div class="ui basic segment no-padding">
+							<div class="ui left floated header"><h2 class="sh_contitle2">试卷</h2></div>
+							<div class="ui right floated header sh_extra">
+								<a class="ui large teal button exam_paper_edit_btn">调整试题</a>
+							</div>
+						</div>
+						<div class="ui huge teal inverted segment clearfix mb-0">
+							<span class="fl sh_routerback"><i class="chevron left icon"></i></span>
+							<h3 class="ui left floated header">编辑试卷</h3>
+						</div>
+					</div>
+					<div class="sixteen wide column">
+						<div class="ui segments">
+							<div class="ui grey2 inverted segment sh_segment">
+								<h3 class="ui center aligned header">电子商务班结课考试试-A卷</h3>
+								<div class="sh_other">
+									<span class="mr-3">试卷分值：100分</span>
+									<div class="ui right labeled input">
+										<label for="amount" class="ui label">时间限制：</label>
+										<input name="shExamPaperTime" value="90" type="number" style="width: 100px;" placeholder="请输入时间限制" autocomplete="off">
+										<div class="ui basic label">分钟</div>
+									</div>
+								</div>
+							</div>
+							<div class="ui segment">
+								<div class="examPaperWrap">
+									<!-- 试卷主内容区 -->
+									<div class="examPaperContent">
+										<form class="ui large form">
+											<div class="examPaperContentbox">
+												
+												<!-- 单选题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="title"><h3>一、单选题（10题，20分）</h3><span class="desc">共10道题，20分</span></div>
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select1" value="A">
+																				<label class="coloring blue">A 创意要摒弃一切别人用过的元素</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select1" value="B">
+																				<label class="coloring blue">B idea要有一种“创”“造”“意”外的能力，直击消费者内心</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select1" value="C">
+																				<label class="coloring blue">C 广告创意要采用一种新的制作技术</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select1" value="D">
+																				<label class="coloring blue">D 广告创意要自成一派</label>
+																			</div> 
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+															<li>
+																<div class="quesnumber">2</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select2" value="A">
+																				<label class="coloring blue">A 创意要摒弃一切别人用过的元素</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select2" value="B">
+																				<label class="coloring blue">B idea要有一种“创”“造”“意”外的能力，直击消费者内心</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select2" value="C">
+																				<label class="coloring blue">C 广告创意要采用一种新的制作技术</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question1-select2" value="D">
+																				<label class="coloring blue">D 广告创意要自成一派</label>
+																			</div> 
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<!-- 单选题型分类结束 -->
+												
+												<!-- 多选题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="title"><h3>二、多选题（10题，20分）</h3><span class="desc">共10道题，20分</span></div>
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui checkbox">
+																				<input type="checkbox" name="paper-question2-select1" value="A">
+																				<label class="coloring blue">A 创意要摒弃一切别人用过的元素</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui checkbox">
+																				<input type="checkbox" name="paper-question2-select1" value="B">
+																				<label class="coloring blue">B idea要有一种“创”“造”“意”外的能力，直击消费者内心</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui checkbox">
+																				<input type="checkbox" name="paper-question2-select1" value="C">
+																				<label class="coloring blue">C 广告创意要采用一种新的制作技术</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui checkbox">
+																				<input type="checkbox" name="paper-question2-select1" value="D">
+																				<label class="coloring blue">D 广告创意要自成一派</label>
+																			</div> 
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+														</ul>
+													</div>
+												</div>
+												<!-- 多选题型分类结束 -->
+												
+												<!-- 判断题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="title"><h3>三、判断题（10题，20分）</h3><span class="desc">共10道题，20分</span></div>
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question3-select1" value="A">
+																				<label class="coloring blue">A 对</label>
+																			</div> 
+																		</div>
+																		<div class="quesoption">
+																			<div class="ui radio checkbox">
+																				<input type="radio" name="paper-question3-select1" value="B">
+																				<label class="coloring blue">B 错</label>
+																			</div> 
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+														</ul>
+													</div>
+												</div>
+												<!-- 判断题型分类结束 -->
+												
+												<!-- 简答题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="title"><h3>四、简答题（10题，20分）</h3><span class="desc">共10道题，20分</span></div>
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui fluid input">
+																				<textarea name="paper-question4-select1" rows="6" placeholder="请输入" maxlength="500" autocomplete="off"></textarea>
+																			</div>
+																			<div class="inline field mt-3">
+																				<label>上传文件：</label>
+																				<div class="ui input">
+																					<span class="ui teal button filebtn">
+																						<input type="file" name="paper-question4-select1-file" value="" />
+																						点击上传
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+														</ul>
+													</div>
+												</div>
+												<!-- 简答题型分类结束 -->
+												
+												<!-- 论述题型分类 -->
+												<div class="examPaperContentItem">
+													<div class="title"><h3>五、论述题（10题，20分）</h3><span class="desc">共10道题，20分</span></div>
+													<div class="content">
+														<ul class="questionlist">
+															<!-- 题单项主干 -->
+															<li>
+																<div class="quesnumber">1</div>
+																<div class="quescontent">
+																	<div class="questitle">如何理解广告创意“出其不意”（ ）</div>
+																	<div class="quesselect">
+																		<div class="quesoption">
+																			<div class="ui fluid input">
+																				<textarea name="paper-question5-select1" rows="6" placeholder="请输入" maxlength="500" autocomplete="off"></textarea>
+																			</div>
+																			<div class="inline field mt-3">
+																				<label>上传文件：</label>
+																				<div class="ui input">
+																					<span class="ui teal button filebtn">
+																						<input type="file" name="paper-question5-select1-file" value="" />
+																						点击上传
+																					</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="quescorrect">
+																		<div class="sh_orange">正确答案：<span>B</span></div>
+																	</div>
+																</div>
+															</li>
+															<!-- 题单项主干结束 -->
+														</ul>
+													</div>
+												</div>
+												<!-- 论述题型分类结束 -->
+												
+											</div>
+										</form>
+									</div>
+									<!-- 试卷概览区 -->
+									<div class="examPaperOverview">
+										<div class="examPaperOverviewbox">
+											<div class="examPaperOverviewItem">
+												<div class="title">单选题（10题，20分）</div>
+												<div class="content">
+													<ul class="qulist">
+														<li class="active">1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+													</ul>
+												</div>
+											</div>
+											<div class="examPaperOverviewItem">
+												<div class="title">多选题（10题，20分）</div>
+												<div class="content">
+													<ul class="qulist">
+														<li class="active">1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+													</ul>
+												</div>
+											</div>
+											<div class="examPaperOverviewItem">
+												<div class="title">判断题（10题，20分）</div>
+												<div class="content">
+													<ul class="qulist">
+														<li class="active">1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+													</ul>
+												</div>
+											</div>
+											<div class="examPaperOverviewItem">
+												<div class="title">简答题（10题，20分）</div>
+												<div class="content">
+													<ul class="qulist">
+														<li class="active">1</li>
+														<li>2</li>
+														<li>3</li>
+														<li>4</li>
+														<li>5</li>
+														<li>6</li>
+														<li>8</li>
+														<li>9</li>
+														<li>10</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="py-2 sh_center">
+									<button type="button" class="ui teal button submit huge mx-5 my-2 exam_paper_edit_submit_btn">确认</button>
+									<button type="button" class="ui orange button huge mx-5 my-2 sh_routerback">取消</button>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+	
+	<!-- 编辑试卷弹窗 -->
+	<div class="ui modal team_modal exam_paper_add_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>选择试题</h2></div>
+			<div class="team_modal_content">
+				<form class="ui form large px-5 sh_form">
+					<div class="field">
+						<label class="w-auto"></label>
+						<div class="ui input papertypebox">
+							
+							<!-- 单选题选项填写字段 -->
+							<div class="paperwrap qradio">
+								<!-- 单选选项填写 -->
+								<div class="field m-0">
+									<label class="w-auto"></label>
+									<div class="ui mini input">
+										<div class="field fieldgroup">
+											<div class="field">
+												<label class="w-auto">单选题：</label>
+												<div class="ui input">
+													<input type="hidden" name="ExamPaperRadioQuestionIds" data-validate="shExamPaperRadioQuestionIds" value="" />
+													<a class="ui mini fluid basic button exam_paper_question_btn exam_paper_radio_question_btn">选择题目</a>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">数量：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperRadioQuestionNumber" readonly="readonly" data-validate="shExamPaperRadioQuestionNumber" type="number" placeholder="请输入数量" autocomplete="off">
+													<div class="ui basic label">/0</div>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">每题分值：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperRadioQuestionScore" data-validate="shExamPaperRadioQuestionScore" type="number" placeholder="请输入每题分值" autocomplete="off">
+													<div class="ui basic label">总分值：<span class="score">0</span>分</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 单选选项填写 结束 -->
+							</div>
+							<!-- 单选题选项填写字段 结束 -->
+							
+							<!-- 多选题选项填写字段 -->
+							<div class="paperwrap qcheckbox">
+								<!-- 多选选项填写 -->
+								<div class="field m-0">
+									<label class="w-auto"></label>
+									<div class="ui mini input">
+										<div class="field fieldgroup">
+											<div class="field">
+												<label class="w-auto">多选题：</label>
+												<div class="ui input">
+													<input type="hidden" name="ExamPaperCheckboxQuestionIds" data-validate="shExamPaperCheckboxQuestionIds" value="" />
+													<a class="ui mini fluid basic button exam_paper_question_btn exam_paper_checkbox_question_btn">选择题目</a>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">数量：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperCheckboxQuestionNumber" readonly="readonly" data-validate="shExamPaperCheckboxQuestionNumber" type="number" placeholder="请输入数量" autocomplete="off">
+													<div class="ui basic label">/0</div>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">每题分值：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperCheckboxQuestionScore" data-validate="shExamPaperCheckboxQuestionScore" type="number" placeholder="请输入每题分值" autocomplete="off">
+													<div class="ui basic label">总分值：<span class="score">0</span>分</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 多选选项填写 结束 -->
+							</div>
+							<!-- 多选题选项填写字段 结束 -->
+							
+							<!-- 判断填写字段 -->
+							<div class="paperwrap qjudge">
+								<!-- 判断选项填写 -->
+								<div class="field m-0">
+									<label class="w-auto"></label>
+									<div class="ui mini input">
+										<div class="field fieldgroup">
+											<div class="field">
+												<label class="w-auto">判断题：</label>
+												<div class="ui input">
+													<input type="hidden" name="ExamPaperJudgeQuestionIds" data-validate="shExamPaperJudgeQuestionIds" value="" />
+													<a class="ui mini fluid basic button exam_paper_question_btn exam_paper_judge_question_btn">选择题目</a>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">数量：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperJudgeQuestionNumber" readonly="readonly" data-validate="shExamPaperJudgeQuestionNumber" type="number" placeholder="请输入数量" autocomplete="off">
+													<div class="ui basic label">/0</div>
+												</div>
+											</div>
+											<div class="field">
+												<label class="w-auto">每题分值：</label>
+												<div class="ui right labeled input">
+													<input name="ExamPaperJudgeQuestionScore" data-validate="shExamPaperJudgeQuestionScore" type="number" placeholder="请输入每题分值" autocomplete="off">
+													<div class="ui basic label">总分值：<span class="score">0</span>分</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 判断选项填写 结束 -->
+							</div>
+							<!-- 判断题选项填写字段 结束 -->
+							
+							<!-- 简答填写字段 -->
+							<div class="paperwrap qshort">
+								<div class="field m-0">
+									<label class="w-auto"></label>
+									<div class="ui mini input">
+										<div class="field fieldgroup">
+											<div class="field">
+												<label class="w-auto">简答题：</label>
+												<div class="ui input">
+													<a class="ui mini teal button exam_paper_question_btn exam_paper_short_question_btn">添加</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 简答填写字段 结束 -->
+							
+							<!-- 论述题填写字段 -->
+							<div class="paperwrap qpaper">
+								<div class="field m-0">
+									<label class="w-auto"></label>
+									<div class="ui mini input">
+										<div class="field fieldgroup">
+											<div class="field">
+												<label class="w-auto">论述题：</label>
+												<div class="ui input">
+													<a class="ui mini teal button exam_paper_question_btn exam_paper_paper_question_btn">添加</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 论述题填写字段 结束 -->
+							
+						</div>
+					</div>
+					
+					<div class="actions py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- 题选择题目弹窗 -->
+	<div class="ui small modal team_modal team_modal2 exam_paper_question_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>选择题目</h2></div>
+			<div class="team_modal_content">
+				<form class="ui form large sh_form">
+					<div class="sh_tablebox left mb-5">
+						<table class="sh_datatable2 ui line table">
+							<thead>
+								<tr>
+									<th class="check">
+										<div class="ui checkbox"><input type="checkbox" class="sh_checkall"><label class="coloring orange"></label></div>
+									</th>
+									<th>题目</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="ui checkbox"><input type="checkbox" name="examQuestionItem[]" value="10" class="sh_checkitem"><label class="coloring orange"></label></div>
+									</td>
+									<td>十万个为什么</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="ui checkbox"><input type="checkbox" name="examQuestionItem[]" value="12" class="sh_checkitem"><label class="coloring orange"></label></div>
+									</td>
+									<td>十万111个为什么</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="actions py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//试卷input修改为只读状态
+			sh.loader('.examPaperWrap')
+			$(".examPaperWrap .examPaperContentbox input").prop("readonly", true)
+			$(".examPaperWrap .examPaperContentbox textarea").prop("readonly", true)
+			setTimeout(function(){
+				sh.loaderclose('.examPaperWrap')
+			},200)
+			
+			
+			//编辑试题按钮弹窗事件
+			$(".exam_paper_edit_btn").click(function(){
+				//初始化表单
+				$(".ui.checkbox").removeClass('checked')
+				$('.ui.modal.exam_paper_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.exam_paper_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//编辑试题提交事件
+			$(document).on('click',".exam_paper_add_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+					},1000)
+				}
+			})
+			
+			//单选选择题目按钮
+			//$(".exam_paper_radio_question_btn,.exam_paper_checkbox_question_btn,.exam_paper_judge_question_btn,.exam_paper_short_question_btn,.exam_paper_paper_question_btn").click(function(){
+			$(".exam_paper_question_btn").click(function(){
+				$('.fieldgroup').removeClass('active')
+				$(this).parents('.fieldgroup').addClass('active')
+				//初始化表单
+				$('.ui.modal.exam_paper_question_modal').find('.ui.form').form('reset')
+				$('.ui.modal.exam_paper_question_modal').modal({
+					allowMultiple: true,
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			
+			//选择题目完成提交
+			$(document).on('click',".exam_paper_question_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					setTimeout(function(){
+						sh.loaderclose($Form)
+						$('.ui.modal.exam_paper_question_modal').modal('hide');
+						var examQuestionItemArr = formAllFields.examQuestionItem.filter(item => item)
+						var pformgroup = $('.ui.modal.exam_paper_add_modal').find('.ui.form .fieldgroup.active')
+						var qbutton = pformgroup.find('.exam_paper_question_btn')
+						//此处判断当前处理题型
+						if(qbutton.hasClass('exam_paper_short_question_btn')){
+							//简答
+							$.each(examQuestionItemArr, function(i,o){
+								var grhtml = ''
+								grhtml += '<div class="field fieldgroup">'
+								grhtml += '<label class="w-75 left">1.请说出1+1为什么等于2？</label>'
+								grhtml += '<div class="ui right labeled input w-25">'
+								grhtml += '<input name="ExamPaperShortQuestionScore" type="number" placeholder="请输入分值" autocomplete="off">'
+								grhtml += '<div class="ui basic label">分</div></div>'
+								grhtml += '<div class="sh_extra pl-2"><a class="ui icon circular red button exam_paper_question_delete_btn"><i class="minus icon"></i></a></div></div>'
+								pformgroup.parent().append(grhtml)
+							})
+						}else if(qbutton.hasClass('exam_paper_paper_question_btn')){
+							//论述
+							$.each(examQuestionItemArr, function(i,o){
+								var grhtml = ''
+								grhtml += '<div class="field fieldgroup">'
+								grhtml += '<label class="w-75 left">1.请说出1+1为什么等于2？</label>'
+								grhtml += '<div class="ui right labeled input w-25">'
+								grhtml += '<input name="ExamPaperPaperQuestionScore" type="number" placeholder="请输入分值" autocomplete="off">'
+								grhtml += '<div class="ui basic label">分</div></div>'
+								grhtml += '<div class="sh_extra pl-2"><a class="ui icon circular red button exam_paper_question_delete_btn"><i class="minus icon"></i></a></div></div>'
+								pformgroup.parent().append(grhtml)
+							})
+						}else{
+							//单选、多选、判断
+							pformgroup.find('.exam_paper_question_btn').parent().find('input').val(examQuestionItemArr).trigger('blur')
+							pformgroup.find('.field:nth-child(2)').find('input').val(examQuestionItemArr.length)
+						}
+					},300)
+				}
+			})
+			
+			
+			//简答and论述题删除题
+			$(document).on('click',".exam_paper_question_delete_btn",function(e){
+				var that = $(this)
+				that.parents('.fieldgroup').remove()
+			})
+			
+		})
+	</script>
+</body>
+</html>

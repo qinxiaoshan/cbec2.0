@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>团队管理-分配组员</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span class="active">实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui equal width grid stackable padded">
+					
+					<div class="sixteen wide column">
+						<div class="ui basic segment no-padding">
+							<div class="ui left floated header"><h2 class="sh_contitle2">团队管理</h2></div>
+							<div class="ui right floated header sh_extra">
+								<div class="ui small action input ml-3">
+									<input type="text" placeholder="请输入小组名称">
+									<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+								</div>
+								<button class="ui teal large button ml-3 mr-0 team_group_key_btn">一键分组</button>
+							</div>
+						</div>
+						<div class="ui huge teal inverted segment clearfix mb-0">
+							<span class="fl sh_routerback"><i class="chevron left icon"></i></span>
+							<h3 class="ui left floated header">分配组员</h3>
+						</div>
+					</div>
+					
+					<div class="sixteen wide column">
+						
+						<div class="teamGroupwrap">
+						
+							<div class="teamGrouplist">
+								<div class="teamGrouplisthead">
+									<div class="groupname">小组名称</div>
+									<div class="grouptime">创建时间</div>
+									<div class="groupaction">操作</div>
+								</div>
+								<div class="teamGrouplistbody">
+									<div class="teamGrouplistitem">
+										<div class="groupname">小组1</div>
+										<div class="grouptime">2021.01.02   08:50:08</div>
+										<div class="groupaction">
+											<a class="ui button course_team_init_btn">初始化</a>
+											<a class="ui toggle button course_team_choosemember_btn">选择组员</a>
+										</div>
+										<!-- 若已选择完成组员 则下方grouptogglebox 删除类sh_hidden直接进行展示 -->
+										<div class="grouptogglebox">
+											<div class="groupname">
+												<span class="ui tiny button teamgroup_member_radio" data-value="1">王小强</span>
+												<span class="ui tiny button teamgroup_member_radio" data-value="1">王小强</span>
+												<span class="ui tiny button teamgroup_member_radio" data-value="1">王小强</span>
+											</div>
+											<div class="grouptime"></div>
+											<div class="groupaction">
+												<div class="actionitem"><a class="ui button course_team_chooseleader_btn">选择组长</a></div>
+												<div class="actionitem"><a class="ui button course_team_removemember_btn">移出小组</a></div>
+											</div>
+										</div>
+									</div>
+									<div class="teamGrouplistitem">
+										<div class="groupname">小组1</div>
+										<div class="grouptime">2021.01.02   08:50:08</div>
+										<div class="groupaction">
+											<a class="ui button course_team_init_btn">初始化</a>
+											<a class="ui toggle button course_team_choosemember_btn">选择组员</a>
+										</div>
+										<div class="grouptogglebox sh_hidden">
+											<div class="groupname">
+												<span class="ui tiny button teamgroup_member_radio" data-value="1">王小强</span>
+											</div>
+											<div class="grouptime"></div>
+											<div class="groupaction">
+												<div class="actionitem"><a class="ui button course_team_chooseleader_btn">选择组长</a></div>
+												<div class="actionitem"><a class="ui button course_team_removemember_btn">移出小组</a></div>
+											</div>
+										</div>
+									</div>
+									
+
+								</div>
+							</div>
+									
+							<div class="teamGrouptable">
+								<span class="teamGrouptogglebtn"><i class="caret right icon"></i></span>
+								<div class="teamGrouptablettbox sh_tablebox">
+									<table class="sh_datatable3 ui single line table">
+										<thead>
+											<tr>
+												<th width="100px">学生列表</th>
+												<th>学号</th>
+												<th>姓名</th>
+												<th>班级</th>
+												<th>所属小组</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><div class="ui checkbox"><input type="checkbox" name="checkitem" class="sh_checkitem"><label class="coloring orange"></label></div></td>
+												<td>(08) 3082 6765</td>
+												<td>张晓昊</td>
+												<td>运营1班</td>
+												<td>1组
+											</tr>
+											<tr>
+												<td><div class="ui checkbox"><input type="checkbox" name="checkitem" class="sh_checkitem"><label class="coloring orange"></label></div></td>
+												<td>(08) 3082 6765</td>
+												<td>张晓昊</td>
+												<td>运营1班</td>
+												<td>1组
+											</tr>
+											<tr>
+												<td><div class="ui checkbox"><input type="checkbox" name="checkitem" class="sh_checkitem"><label class="coloring orange"></label></div></td>
+												<td>(08) 3082 6765</td>
+												<td>张晓昊</td>
+												<td>运营1班</td>
+												<td>1组
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="teamGrouptablebtnbox">
+									<a class="ui teal large button team_group_ok_btn">确定</a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+	
+	<!-- 一键分组弹窗 -->
+	<div class="ui small modal team_modal teamgroup_key_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>一键分组</h2></div>
+			<div class="team_modal_content">
+				<form class="ui form large sh_form">
+					<div class="field">
+						<label><i class="sh_label_req"></i>请设置每组队员人数：</label>
+						<div class="ui icon input">
+							<input name="teamgroupnumber" data-validate="empty" type="number" max="100" placeholder="请设置每组队员人数" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>请选择一键分组类型：</label>
+						<div class="ui icon input">
+							<input name="teamgrouptype" data-validate="teamgrouptype" type="hidden" placeholder="" autocomplete="off">
+							<span class="ui small toggle button teamgrouptype_radio" data-value="1">按学号分组</span>
+							<span class="ui small toggle button teamgrouptype_radio" data-value="2">随机分组</span>
+						</div>
+					</div>
+					<div class="actions mb-5 py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//一键分组按钮弹窗事件
+			$(".team_group_key_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.teamgroup_key_modal').find('.ui.form').form('reset')
+				$('.ui.modal.teamgroup_key_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//一键分组提交事件
+			$(document).on('click',".teamgroup_key_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+					},1000)
+				}
+			})
+			
+			//选择分组类型
+			$(".teamgrouptype_radio").click(function(){
+				var that = $(this)
+				var tvalue = that.attr('data-value')
+				that.addClass('active').siblings().removeClass('active')
+				that.parent().find('input').val(tvalue).trigger('blur')
+			})
+			
+			//选择组员按钮侧边展开事件
+			$(".teamGroupwrap .course_team_choosemember_btn").click(function(){
+				var that = $(this)
+				var twrap = that.parents('.teamGroupwrap')
+				that.parents(".teamGrouplistitem").addClass('active').siblings().removeClass('active')
+				twrap.addClass('open')
+				twrap.find('.teamGrouptogglebtn .icon').removeClass('left').addClass('right')
+			})
+			
+			//收起侧边展开表格
+			$(".teamGrouptogglebtn").click(function(){
+				var that = $(this)
+				that.find('.icon').removeClass('right').addClass('left')
+				that.parents('.teamGroupwrap').removeClass('open')
+				that.parents(".teamGroupwrap").find(".teamGrouplistitem").removeClass('active')
+			})
+			
+			//分配组员选择学生确定按钮事件
+			$(".teamGroupwrap .team_group_ok_btn").click(function(){
+				var that = $(this)
+				var twrap = that.parents('.teamGroupwrap')
+				var ttable = that.parents('.teamGrouptable').find('table')
+				var choosearr = []
+				ttable.find('tr').each(function(k,item){
+					if($(item).find('input[type=checkbox]').prop('checked')){
+						$(item).find('input[type=checkbox]').parents('td').empty()
+						choosearr.push('大萨达')
+					}
+				})
+				//模拟ajax提交
+				console.log(choosearr)
+				sh.loader(twrap)
+				setTimeout(function(){
+					var grouptogglebox = twrap.find(".teamGrouplist .teamGrouplistbody .teamGrouplistitem.active .grouptogglebox")
+					grouptogglebox.removeClass('sh_hidden')
+					$.each(choosearr, function(k,item){
+						grouptogglebox.find(".groupname").append('<span class="ui tiny button teamgroup_member_radio" data-value="1">王小强</span>')
+					})
+					sh.loaderclose(twrap)
+				},300)
+				
+			})
+			
+			//组员按钮模拟复选框事件
+			$(document).on('click',".teamGrouplist .teamGrouplistitem .teamgroup_member_radio",function(e){
+				var that = $(this)
+				if(that.hasClass("toggle")){
+					if(that.hasClass("zuzhang")){
+						that.addClass("active").siblings().removeClass('active')
+					}else{
+						that.toggleClass("active")
+					}
+				}
+			})
+			
+			
+			
+			var teamactionhtml = '<div class="actionappend">'+
+					'<a class="ui tiny teal header course_team_chooseok_btn m-1">确认</a>'+
+					'<a class="ui tiny grey header course_team_choosecancel_btn m-1">取消</a>'+
+				'<div>'
+			//选择组长按钮点击事件
+			$(document).on('click',".teamGrouplist .teamGrouplistitem .course_team_chooseleader_btn",function(e){
+				var that = $(this)
+				that.parents(".teamGrouplistitem").find(".course_team_choosecancel_btn").trigger('click')
+				that.addClass("teal")
+				that.parents(".grouptogglebox").find(".teamgroup_member_radio").addClass("zuzhang toggle")
+				if(!that.parent().find(".actionappend").length){
+					that.parent().append(teamactionhtml)
+				}
+			})
+			//选择组长/移出组员确认点击事件
+			$(document).on('click',".teamGrouplist .teamGrouplistitem .course_team_chooseok_btn",function(e){
+				var that = $(this)
+				var twrap = that.parents('.teamGroupwrap')
+				//点击了选择组长的确认
+				if(that.parents(".grouptogglebox").find(".course_team_chooseleader_btn").hasClass("teal")){
+					//...
+					//模拟ajax提交
+					sh.loader(twrap)
+					setTimeout(function(){
+						//操作完成回调
+						that.parents(".teamGrouplistitem").find(".course_team_choosecancel_btn").trigger('click')
+						sh.loaderclose(twrap)
+					},300)
+				}
+				//点击了移出组员的确认
+				if(that.parents(".grouptogglebox").find(".course_team_removemember_btn").hasClass("teal")){
+					//...
+					//模拟ajax提交
+					sh.loader(twrap)
+					setTimeout(function(){
+						//操作完成回调
+						that.parents(".teamGrouplistitem").find(".course_team_choosecancel_btn").trigger('click')
+						sh.loaderclose(twrap)
+					},300)
+				}
+			})
+			//选择组长/移出组员取消点击事件
+			$(document).on('click',".teamGrouplist .teamGrouplistitem .course_team_choosecancel_btn",function(e){
+				var that = $(this)
+				that.parents(".grouptogglebox").find(".course_team_chooseleader_btn").removeClass("teal")
+				that.parents(".grouptogglebox").find(".course_team_removemember_btn").removeClass("teal")
+				that.parents(".grouptogglebox").find(".teamgroup_member_radio").removeClass("zuzhang yichu toggle active")
+				that.parent().remove()
+			})
+			
+			
+			//移出小组按钮点击事件
+			$(document).on('click',".teamGrouplist .teamGrouplistitem .course_team_removemember_btn",function(e){
+				var that = $(this)
+				that.parents(".teamGrouplistitem").find(".course_team_choosecancel_btn").trigger('click')
+				that.addClass("teal")
+				that.parents(".grouptogglebox").find(".teamgroup_member_radio").addClass("yichu toggle")
+				if(!that.parent().find(".actionappend").length){
+					that.parent().append(teamactionhtml)
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

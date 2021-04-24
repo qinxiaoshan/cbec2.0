@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>实训任务-我的任务</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span class="active">实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui raised segment my-3 coursesegment">
+					<a class="ui yellow ribbon contitle label">实训任务</a>
+					<span class="coursesegmentactive fr">
+						<div class="sh_extra">
+							<div class="ui small action input ml-3">
+								<input type="text" placeholder="请输入任务名称">
+								<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+							</div>
+							<button class="ui teal large button ml-3 mr-0 task_add_btn">添加教学任务</button>
+						</div>
+					</span>
+					
+					<div class="ui basic segment no-padding courseMaterialinfo">
+						<div class="ui pointing large teal secondary menu stackable tabular sh_coursetab">
+							<a class="item" data-tab="taskAll">系统任务</a>
+							<a class="item active" data-tab="taskMy">我的任务</a>
+							<a class="item" data-tab="taskPush">已推送</a>
+						</div>
+					</div>
+					
+					<div class="courseTeamlistwrap">
+						<div class="taskSystemMy sh_page_list mb-5">
+							
+							<div class="taskSystemitem">
+								<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+								<div class="content">
+									<div class="info">
+										<div class="name">实训动员</div>
+										<div class="time">任务时长: 90分钟</div>
+										<div class="leader">负责人: 教师</div>
+									</div>
+									<div class="other">
+										<span>任务进度：</span>
+										<div class="ui small yellow progress" data-value="20" data-total="100">
+											<div class="bar"><div class="progress"></div></div>
+										</div>
+									</div>
+								</div>
+								<div class="actions">
+									<a>查看<div class="floating ui small label sh_red"><i class="bell icon m-0"></i></div></a>
+									<a>已推送</a>
+									<a class="teal">任务追踪</a>
+								</div>
+							</div>
+							<div class="taskSystemitem">
+								<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+								<div class="content">
+									<div class="info">
+										<div class="name">实训动员</div>
+										<div class="time">任务时长: 90分钟</div>
+										<div class="leader">负责人: 教师</div>
+									</div>
+									<div class="other">
+										<span>任务进度：</span>
+										<div class="ui small yellow progress" data-value="20" data-total="100">
+											<div class="bar"><div class="progress"></div></div>
+										</div>
+									</div>
+								</div>
+								<div class="actions">
+									<a>查看</a>
+									<a>推送</a>
+									<a class="teal">任务追踪</a>
+								</div>
+							</div>
+							<div class="taskSystemitem">
+								<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+								<div class="content">
+									<div class="info">
+										<div class="name">实训动员</div>
+										<div class="time">任务时长: 90分钟</div>
+										<div class="leader">负责人: 教师</div>
+									</div>
+									<div class="other">
+										<span>任务进度：</span>
+										<div class="ui small yellow progress" data-value="20" data-total="100">
+											<div class="bar"><div class="progress"></div></div>
+										</div>
+									</div>
+								</div>
+								<div class="actions">
+									<a>查看</a>
+									<a>推送</a>
+									<a class="teal">任务追踪</a>
+								</div>
+							</div>
+							
+						</div>
+						<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar data-link></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+	
+	
+	<!-- 添加教学任务弹窗 -->
+	<div class="ui modal team_modal task_add_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>添加教学任务</h2></div>
+			<div class="team_modal_content">
+				<form class="ui form large sh_form mx-5">
+					<div class="field">
+						<label><i class="sh_label_req"></i>选择任务封面：</label>
+						<div class="ui icon input">
+							<input type="hidden" name="taskImage" data-validate="shtaskImage" >
+							<div class="sh_upload w-100">
+								<div class="sh_upload_image fl mr-4">
+									<img class="ui centered small image sh_upload_img" src="../../../img/wireframe/image.png" alt="label-image">
+								</div>
+								<div class="sh_upload_list"></div>
+								<div class="sh_upload_action fl">
+									<a class="ui orange button filebtn">选择文件</a>
+									<a class="ui teal button uploadbtn">开始上传</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>绑定素材资源：</label>
+						<div class="ui input">
+							<input name="taskMaterial" data-validate="shtaskMaterial" type="hidden" placeholder="请输入任务时长" autocomplete="off">
+							<span class="ui teal large button task_material_btn">前往绑定素材资源</span>
+						</div>
+					</div>
+					<div class="inline field">
+						<label><i class="sh_label_req"></i>任务时长：</label>
+						<div class="ui right labeled input">
+							<input name="taskTime" data-validate="shtaskTime" type="number" placeholder="请输入任务时长" autocomplete="off">
+							<div class="ui basic label">分钟</div>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>任务描述：</label>
+						<div class="ui icon input">
+							<textarea name="taskSummarize" data-validate="shtaskSummarize" rows="4" placeholder="请输入任务描述" maxlength="200" autocomplete="off"></textarea>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>任务对应岗位：</label>
+						<div class="ui icon input">
+							<div class="ui checkbox sh_input_btn mr-2">
+								<input type="checkbox" name="taskJobs[]" class="sh_checkitem" data-validate="shtaskJobs" value="1" checked="checked">
+								<label class="coloring green">销售专员</label>
+							</div>
+							<div class="ui checkbox sh_input_btn mr-2">
+								<input type="checkbox" name="taskJobs[]" class="sh_checkitem" data-validate="shtaskJobs" value="2">
+								<label class="coloring green">产品专员</label>
+							</div>
+							<div class="ui checkbox sh_input_btn ml-5 mr-2">
+								<input type="checkbox" class="sh_checkall" data-validate="shtaskJobs" value="2">全选
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>是否需要回复：</label>
+						<div class="ui icon input">
+							<div class="ui radio checkbox sh_input_btn mr-4">
+								<input type="radio" name="taskReply" data-validate="shtaskReply" value="1" checked="checked">
+								<label class="coloring green">是</label>
+							</div>
+							<div class="ui radio checkbox sh_input_btn mr-4">
+								<input type="radio" name="taskReply" data-validate="shtaskReply" value="2">
+								<label class="coloring green">否</label>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>是否需要上传文件：</label>
+						<div class="ui icon input">
+							<div class="ui radio checkbox sh_input_btn mr-4">
+								<input type="radio" name="taskUploadfile" data-validate="shtaskUploadfile" value="1" checked="checked">
+								<label class="coloring green">是</label>
+							</div>
+							<div class="ui radio checkbox sh_input_btn mr-4">
+								<input type="radio" name="taskUploadfile" data-validate="shtaskUploadfile" value="2">
+								<label class="coloring green">否</label>
+							</div>
+						</div>
+					</div>
+					<div class="actions mb-5 py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!-- 绑定资源弹窗 -->
+	<div class="ui modal team_modal task_material_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>绑定资源</h2></div>
+			<div class="team_modal_content">
+				<div class="ui basic segment no-padding courseMaterialinfo">
+					<div class="ui pointing large teal secondary menu stackable tabular sh_coursetab">
+						<a class="item active" data-tab="materialAll">系统资源</a>
+						<a class="item" data-tab="materialMy">我的资源</a>
+					</div>
+				</div>
+				<form class="ui form large sh_form">
+					<div class="ui tab basic segment no-padding active" data-tab="materialAll">
+						<ul class="taskmateriallist">
+							<li>
+								<div class="ui checkbox sh_input_btn">
+									<input type="checkbox" name="taskMaterialselect[]" value="1">
+									<div class="image"><img src="../../../img/deadpool.jpeg"></div>
+								</div>
+							</li>
+							<li>
+								<div class="ui checkbox sh_input_btn">
+									<input type="checkbox" name="taskMaterialselect[]" value="2">
+									<div class="image"><img src="../../../img/deadpool.jpeg"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="ui tab basic segment no-padding" data-tab="materialMy">
+						<ul class="taskmateriallist">
+							<li>
+								<div class="ui checkbox sh_input_btn">
+									<input type="checkbox" name="taskMaterialselect[]" value="3">
+									<div class="image"><img src="../../../img/deadpool.jpeg"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="actions mb-5 py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/jquery.address-1.6.min.js"></script>
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//添加教学任务弹窗事件
+			$(".task_add_btn").click(function(){
+				//初始化表单
+				$('.ui.modal.task_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.task_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//添加资源上传资源封面
+			var uploader = sh.uploadimg('.sh_upload', {
+				auto: false,
+				pick: {
+					id:'.sh_upload .filebtn',  //选择文件的按钮
+					multiple:false, 
+					label: '选择图片'
+				},
+				uploadbtn: '.sh_upload .uploadbtn',
+				server: 'http://platform2.geege.com/student/uploadimg',
+				formData: {},
+				fileVal: 'avatar',
+			},function(res){
+				console.log(res)
+				//上传完成回调
+				if(res.status == 'success'){
+					$("input[name=taskImage]").val(res.file.name).trigger('blur')
+					sh.alert.success("上传成功！").then(function(){
+						// 确认回调
+						// location.reload()
+					})
+				}else{
+					sh.alert.error("上传失败！")
+				}
+			});
+			
+			
+			//添加任务表单提交
+			$(document).on('click',".task_add_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+					},1000)
+				}
+			})
+			
+			
+			//绑定任务资源按钮弹窗
+			$(".task_material_btn").click(function(){
+				//初始化表单
+				// $('.ui.modal.task_material_modal').find('.ui.form').form('reset')
+				$('.ui.modal.task_material_modal').modal({
+					allowMultiple: true,
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//绑定任务资源提交
+			$(document).on('click',".task_material_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					var formselects = formAllFields.taskMaterialselect.filter(item => item != false)
+					console.log(formselects)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+						$('.ui.modal.task_add_modal').find('.ui.form input[name="taskMaterial"]').val(formAllFields).trigger('blur')
+						$('.ui.modal.task_material_modal').modal('hide')
+					},1000)
+				}
+			})
+			
+			
+		})
+	</script>
+</body>
+</html>

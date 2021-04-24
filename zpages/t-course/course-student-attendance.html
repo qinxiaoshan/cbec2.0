@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>课程管理-学生管理-考勤</title>
+	<link href="../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../css/main.css" rel="stylesheet" />
+	<link href="../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<!--navbar-->
+	<div class="sh_header">
+		<div class="ui container">
+			<div class="ui menu icon borderless grid" data-color="inverted white">
+				<a class="item logo">
+					<img src="../../img/logo.png" alt="">
+					<img src="../../img/thumblogo.png" alt="" class="displaynone">
+				</a>
+				<div class="ui dropdown item pointing verticalmenu sh_hidden">
+					<i class="ion-navicon-round big icon"></i>
+					<div class="center menu">
+						<a class="item" href="">首页</a>
+						<a class="item active" href="">课程管理</a>
+						<a class="item" href="">班级管理</a>
+						<a class="item" href="">成绩管理</a>
+						<a class="item" href="">素材中心</a>
+						<a class="item" href="">教学工具</a>
+					</div>
+				</div>
+				<div class="center menu transversemenu">
+					<a class="item" href="">首页</a>
+					<a class="item active" href="">课程管理</a>
+					<a class="item" href="">班级管理</a>
+					<a class="item" href="">成绩管理</a>
+					<a class="item" href="">素材中心</a>
+					<a class="item" href="">教学工具</a>
+				</div>
+				<div class="right menu">
+					<a class="item">
+						<div class="item py-1">
+							<i class="comments orange large icon"></i>
+							<div class="floating ui orange circular label">2</div>
+						</div>
+					</a>
+					<div class="ui dropdown item top right pointing">
+						<img class="ui avatar mini circular image" src="../../img/avatar/people/enid.png" alt="label-image" />
+						<span>张老师</span>
+						<div class="menu">
+							<a class="item" href="">编辑资料</a>
+							<a class="item" href="">课程中心</a>
+							<a class="item" href="">甘特图</a>
+							<div class="ui divider"></div>
+							<a class="item" href="user/login.html">退出</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--navbar-->
+	
+	<!--maincontent-->
+	<div class="sh_main">
+		<div class="ui container py-4">
+			<div class="ui equal width grid stackable padded">
+				
+				<div class="sixteen wide column">
+					<div class="ui basic segment no-padding">
+						<div class="ui left floated header"><h2 class="sh_contitle">课程管理</h2></div>
+					</div>
+				</div>
+				
+				<div class="sixteen wide column">
+					<div class="ui huge segment clearfix mb-0">
+						<h3 class="ui left floated teal header mb-0 mt-2">亚马逊运营1班-张晓晗丨35246</h3>
+						<span class="fr">
+							<a class="ui teal button sh_routerback">返回考勤列表</a>
+						</span>
+					</div>
+					<div class="courseStudentwrap">
+							
+						<div class="ui basic fluid card no-padding">
+							<div class="content"><div class="ui header">出勤统计</div></div>
+							<div class="content px-0">
+								<div class="courseStudentStatic">
+									<div class="courseStudentStatic_info">
+										<ul>
+											<li><label>累计出勤次数：</label><div class="text">30次</div></li>
+											<li><label>累计未出勤次数：</label><div class="text">10次</div></li>
+											<li><label>考勤分数：</label><div class="text">80分</div></li>
+										</ul>
+									</div>
+									<div class="courseStudentStatic_content">
+										<div class="courseStudentStatic_form">
+											<div class="ui fluid right icon input" style="max-width: 500px;">
+												<input name="studentDate" class="student_datepicker" data-format="YYYY-MM-DD hh:mm:ss" type="text" placeholder="请选择查询时间段" autocomplete="off" readonly>
+												<i class="icon teal calendar alternate outline"></i>
+											</div>
+										</div>
+										<div class="courseStudentStatic_chart">
+											<div class="attendancechart" id="attendancechart" style="height: 400px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="ui basic fluid card no-padding mb-5 pb-5">
+							<div class="content"><div class="ui header">日历统计</div></div>
+							<div class="content px-0">
+								<div class="courseStudentCalendar">
+									<div class="signcalender" id="signcalender"></div>
+								</div>
+							</div>
+						</div>
+							
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!--maincontent-->
+	
+	<!--bottom-->
+	<div class="sh_bottom">
+		<div class="ui container">
+			<div class="ui equal width left aligned padded grid stackable">
+				<div class="row sh_bottom_info">
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">产品与服务</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a href="">课程管理</a></li>
+									<li><a href="">任务管理</a></li>
+									<li><a href="">团队管理</a></li>
+									<li><a href="">能力评估</a></li>
+									<li><a href="">团队评估</a></li>
+									<li><a href="">个人评估</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">联系我们</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><a>哈尔滨：松花路中国云谷A5栋4层</a></li>
+									<li><a></a></li>
+									<li><a>深圳：龙岗区坂田街道环城南路5号坂田国际中心A栋17层1726室</a></li>
+									<li><a></a></li>
+									<li><a>沈阳：浑南区国际软件园B1栋313室</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">官方微信</div>
+							<div class="ui segment">
+								<img class="ui small image" src="../../img/ewm.jpg" >
+							</div>
+						</div>
+					</div>
+					<div class="eight wide tablet four wide computer column">
+						<div class="ui segments">
+							<div class="ui segment">服务热线</div>
+							<div class="ui segment">
+								<ul class="sh_bottom_ul">
+									<li><span class="telphone">400-6960-310</span></li>
+									<li><a>周一至周六  09:00-17:30</a></li>
+									<li>
+										<a class="ui teal basic huge fluid button mt-4"><i class="headphones icon"></i>立即咨询</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ui inverted divider"></div>
+			<div class="sh_footer">
+				<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+			</div>
+		</div>
+	</div>
+	<!--bottom-->
+	
+
+	<!--jquery-->
+	<script src="../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../plugins/paging/paging.js"></script>
+	<script src="../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../plugins/message/message.min.js"></script>
+	<script src="../../plugins/moment/moment.js"></script>
+	<script src="../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/common.js"></script>
+	<script src="../../js/common-form.js"></script>
+	
+	<link rel="stylesheet" href="../../plugins/calendar/Calendar.css" media="all">
+	<script type="text/javascript" src="../../plugins/calendar/Calendar.js"></script>
+	<script type="text/javascript" src="../../plugins/echarts/echarts.min.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//日期选择框配置
+			sh.datepicker('.student_datepicker', {
+				range:"--",
+				multiPane:false,
+				minDate: moment(new Date()).format('YYYY-MM-DD hh:mm:ss'),
+				donefun: function(obj){
+					//时间段选择完成，进行重新渲染图标 执行方法 getAttendancechart(signdata)
+					console.log(obj)
+					console.log(obj.val.split("--"))
+				}
+			})
+			
+			//考勤日历配置
+			//name 为1 为已签到 为2 为未签到
+			var signdata =  [
+			    { startDate: "2021-02-04", signTime: "9:21" },
+			    { startDate: "2021-02-07", signTime: "12:21" },
+			    { startDate: "2021-02-07", signTime: "10:21" },
+			    { startDate: "2021-02-07", signTime: "13:21" },
+			];
+		
+			function showcalendar(newdate){
+				$("#signcalender").calendar({
+					data: signdata,
+					mode: "month",
+					weekMode: ["星期日 <small>SUN</small>","星期一 <small>MON</small>","星期二 <small>TUE</small>","星期三 <small>WED</small>","星期四 <small>THU</small>","星期五 <small>FRI</small>","星期六 <small>SAT</small>"],
+					maxEvent: 5,
+					showModeBtn: false,
+					showEvent: true,
+					newDate: newdate,	//默认日期 没有则为当天时间
+					cellClick: function(events) {
+						console.log(events)
+					},
+				})
+			}
+			function nowDate(){
+				//获取当前时间
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				month < 10 ? month = "0" + month : ''
+				day < 10 ? day = "0" + day : ''
+				var nowDate = year + "-" + month + "-" + day;
+				return nowDate;
+			}
+			showcalendar(nowDate())
+			
+			
+			getAttendancechart(signdata)
+			/*
+			*	考勤图表生成方法
+			*/
+			function getAttendancechart(datalist){
+				datalist = datalist || []
+				var chartDom = document.getElementById('attendancechart');
+				var myChart = echarts.init(chartDom);
+				var BASE_TIME = moment(new Date()).format("YYYY-MM-DD");
+				var option, chardata = [];
+				var chartxDateArr = [];
+				var chartyDateArr = [];
+				//时间格式统一格式化进行显示
+				var timeformat = function(row){
+				    return BASE_TIME + ' ' + moment(new Date(row.startDate+' '+row.signTime)).format("HH:mm")
+				}
+				var weekformat = function(date){
+					let week = moment(date).day()
+					switch (week) {
+						case 1:
+						  return '周一'
+						case 2:
+						  return '周二'
+						case 3:
+						  return '周三'
+						case 4:
+						  return '周四'
+						case 5:
+						  return '周五'
+						case 6:
+						  return '周六'
+						case 0:
+						  return '周日'
+						}
+				}
+				$.each(datalist, function(k,item){
+					var itemrowdate = moment(item.startDate).format("YYYY-MM-DD")
+					var itemattendancetime = timeformat(item)
+					if(chartxDateArr.indexOf(itemrowdate) == -1){
+					    chartxDateArr.push(itemrowdate)
+					}
+					if(chartyDateArr.indexOf(itemattendancetime) == -1){
+					    chartyDateArr.push(itemattendancetime)
+					}
+					chardata.push([itemrowdate, itemattendancetime])
+				})
+				chartyDateArr.sort((a,b)=>{
+				    return parseInt(a.replace(/\D/g,''),10) - parseInt(b.replace(/\D/g,''),10)
+				})
+				option = {
+					color: window.chartcolor,
+					grid: {
+						top: '30',
+					    left: '70',
+					    right: '3%',
+						bottom: '30',
+					},
+					tooltip: {
+					    formatter: function (params, items) {
+					        let seriesname, textstr = ''
+							seriesname = '签到时间'
+							textstr += params.marker + params.value[0] + ' ' + params.value[1].split(' ')[1] + '<br>'
+					        return seriesname + " :" + '<br>' + textstr
+					    }
+					},
+				    xAxis: {
+				        type: 'category',
+				        boundaryGap: ['50%', '30%'],
+						data: chartxDateArr,
+						axisLine: {
+						    onZero: false,
+						    lineStyle: {
+						        color: '#333'
+						    }
+						},
+				        axisLabel: {
+				            formatter: function (value) {
+				                return moment(value).format("YYYY-MM-DD") + '\n' + weekformat(value)
+				            }
+				        },
+				    },
+				    yAxis: {
+				        type: 'time',
+				        splitLine: {
+							show: true,
+				            lineStyle: {
+				                type: 'dashed',
+				                color: '#ccc'
+				            }
+				        },
+				        axisLine: {
+							show: true,
+				            onZero: false,
+				            lineStyle: {
+				                color: '#333'
+				            }
+				        },
+				        min: BASE_TIME + ` 0:00:00`,
+				        max: BASE_TIME + ` 23:59:59`,
+				        splitArea: {
+				            show: false
+				        },
+				        axisLabel: {
+				            formatter: function (value) {
+				                return (moment(value).format("YYYY-MM-DD HH:mm")).substr(11,20)
+				            }
+				        }
+				    },
+				    series: [{
+				        symbolSize: 10,
+				        data: chardata,
+				        type: 'scatter'
+				    }]
+				};
+				//构造Y轴时间最大值
+				var maxTime = chartyDateArr.length > 0 ? (parseInt(chartyDateArr[chartyDateArr.length-1].split(' ')[1].split(':')[0])+1) + ':00:00' : BASE_TIME + ` 23:59:59`;
+				var minTime = chartyDateArr.length > 0 ? (parseInt(chartyDateArr[0].split(' ')[1].split(':')[0])-1) + ':00:00' : BASE_TIME + ` 0:00:00`;
+				option.yAxis.max = BASE_TIME+' '+maxTime
+				minTime.indexOf('-') == -1 ? option.yAxis.min = BASE_TIME+' '+minTime : ''
+				option && myChart.setOption(option);
+				window.onresize = function () {
+					myChart.resize();
+				}
+			}
+			
+		})
+	</script>
+</body>
+</html>

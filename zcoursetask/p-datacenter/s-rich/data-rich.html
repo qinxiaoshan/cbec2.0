@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>数据中心-财富榜</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../plugins/swiper/swiper-bundle.min.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span>实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span class="active">数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span>实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui raised segment my-3 coursesegment">
+					<a class="ui yellow ribbon contitle label">财富榜</a>
+					<span class="fr">
+						<div class="sh_extra">
+							<span class="ui grey header mr-4 mt-2">团队数：6组</span>
+						</div>
+					</span>
+					
+					<div class="ui equal width grid stackable padded">
+						
+						<div class="sixteen wide column">
+							<div class="ui large segments">
+								<div class="ui segment sh_segment">
+									<div class="ui header"><i class="static icon"></i>任务排行</div>
+									<div class="sh_extra"><a href="" class="ui tiny teal button">更多</a></div>
+								</div>
+								<div class="dataInfoWrap">
+									<div class="datainfoitem">
+										<div class="sh_chart scroll">
+											<div class="sh_tablebox">
+												<table class="ui line table">
+													<thead>
+														<tr>
+															<th>排名</th>
+															<th>小组名称</th>
+															<th>任务总数</th>
+															<th>任务得分</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>项目1组</td>
+															<td>3</td>
+															<td>90</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>项目2组</td>
+															<td>3</td>
+															<td>80</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>项目3组</td>
+															<td>3</td>
+															<td>70</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="datainfoitem">
+										<div class="sh_chart data-chart-task" id="data-chart-task"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="sixteen wide column">
+							<div class="ui large segments">
+								<div class="ui segment sh_segment">
+									<div class="ui header"><i class="static icon"></i>业绩排行</div>
+									<div class="sh_extra"><a href="" class="ui tiny teal button">更多</a></div>
+								</div>
+								<div class="content">
+									<div class="dataInfoWrap">
+										<div class="datainfoitem">
+											<div class="sh_chart scroll">
+												<div class="sh_tablebox">
+													<table class="ui line table">
+														<thead>
+															<tr>
+																<th>排名</th>
+																<th>小组名称</th>
+																<th>任务总数</th>
+																<th>任务得分</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>1</td>
+																<td>项目1组</td>
+																<td>3</td>
+																<td>90</td>
+															</tr>
+															<tr>
+																<td>2</td>
+																<td>项目2组</td>
+																<td>3</td>
+																<td>80</td>
+															</tr>
+															<tr>
+																<td>3</td>
+																<td>项目3组</td>
+																<td>3</td>
+																<td>70</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div class="datainfoitem">
+											<div class="sh_chart data-chart-results" id="data-chart-results"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+	
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../plugins/swiper/swiper-bundle.min.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript" src="../../../plugins/echarts/echarts.min.js"></script>
+	<script type="text/javascript" src="../../../plugins/echarts/world-zh.js"></script>
+	<script type="text/javascript" src="../../../plugins/echarts/world.js"></script>
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			var taskjson = [
+				{
+					datax: '1组',
+					datatotal: 20,
+					datafinish: 20,
+					datascore: 100,
+				},
+				{
+					datax: '2组',
+					datatotal: 20,
+					datafinish: 10,
+					datascore: 50,
+				},
+				{
+					datax: '3组',
+					datatotal: 20,
+					datafinish: 5,
+					datascore: 25,
+				},
+			]
+			
+			//任务排行图表生成方法
+			getTaskchart(taskjson)
+			function getTaskchart(datalist){
+				datalist = datalist || []
+				var chartDom = document.getElementById('data-chart-task');
+				var myChart = echarts.init(chartDom);
+				var option, chardatatotal = [], chardatafinish = [], chardatascore = [];
+				var chartxArr = [];
+				var zhucolorArr = window.chartcolor
+				$.each(datalist, function(k,item){
+					var itemx = item.datax
+					var itemtotal = item.datatotal
+					var itemfinish = item.datafinish
+					var itemscore = item.datascore
+					if(chartxArr.indexOf(itemx) == -1){
+					    chartxArr.push(itemx)
+					}
+					chardatatotal.push(itemtotal)
+					chardatafinish.push(itemtotal)
+					chardatascore.push(itemscore)
+				})
+				option = {
+					color: window.chartcolor,
+					title: {
+						left: 'center',
+						text: '',
+						textStyle: {
+							color: '#666',
+							fontSize: '15',
+						},
+					},
+					grid: {
+						top: '0',
+					    left: '30',
+					    right: '8%',
+						bottom: '70',
+					},
+					tooltip: {},
+					legend: {
+						bottom: 10,
+						itemWidth: 15,
+						itemHeight: 15,
+					},
+				    xAxis: {
+				        type: 'value',
+				        splitLine: {
+				        	show: true,
+				            lineStyle: {
+				                type: 'dashed',
+				                color: '#ccc'
+				            }
+				        },
+				        axisLine: {
+				        	show: true,
+				            onZero: false,
+				            lineStyle: {
+				                color: '#666'
+				            }
+				        },
+				    },
+				    yAxis: {
+						type: 'category',
+						data: chartxArr,
+						axisLine: {
+						    onZero: false,
+						    lineStyle: {
+						        color: '#666'
+						    }
+						},
+						axisTick: {
+							alignWithLabel: true
+						}
+				    },
+				    series: [
+						{
+							name: '任务总数',
+							type: 'bar',
+							barWidth : 10,
+							itemStyle: {
+								color: zhucolorArr[0]
+							},
+							data: chardatatotal,
+						},
+						{
+							name: '完成任务数',
+							type: 'bar',
+							barWidth : 10,
+							itemStyle: {
+								color: zhucolorArr[1]
+							},
+							data: chardatafinish,
+						},
+						{
+							name: '任务得分',
+							type: 'bar',
+							barWidth : 10,
+							itemStyle: {
+								color: zhucolorArr[2]
+							},
+							data: chardatascore,
+						},
+					]
+				};
+				option && myChart.setOption(option);
+				$(window).resize(function() {
+				    myChart.resize();
+				});
+			}
+			
+			
+			var chartjson = [
+				{
+					datax: '1组',
+					datay: 500000,
+				},
+				{
+					datax: '2组',
+					datay: 1000000,
+				},
+				{
+					datax: '3组',
+					datay: 600000,
+				},
+			]
+			//业绩排行图表生成方法
+			getResultschart(chartjson)
+			function getResultschart(datalist){
+				datalist = datalist || []
+				var chartDom = document.getElementById('data-chart-results');
+				var myChart = echarts.init(chartDom);
+				var option, chardata = [];
+				var chartxArr = [];
+				var chartyArr = [];
+				var zhucolorArr = window.chartcolor
+				$.each(datalist, function(k,item){
+					var itemx = item.datax
+					var itemy = {
+						value: item.datay,
+						itemStyle: {
+							color: zhucolorArr[k]
+						}
+					}
+					if(chartxArr.indexOf(itemx) == -1){
+					    chartxArr.push(itemx)
+					}
+					if(chartyArr.indexOf(itemy) == -1){
+					    chartyArr.push(itemy)
+					}
+					chardata.push(itemy)
+				})
+				option = {
+					color: window.chartcolor,
+					title: {
+						left: 'center',
+						text: '课程内容每组销售金额',
+						textStyle: {
+							color: '#666',
+							fontSize: '15',
+						},
+					},
+					grid: {
+						top: '50',
+					    left: '70',
+					    right: '3%',
+						bottom: '30',
+					},
+					tooltip: {},
+					legend: {},
+				    xAxis: {
+				        type: 'category',
+						data: chartxArr,
+						axisLine: {
+						    onZero: false,
+						    lineStyle: {
+						        color: '#666'
+						    }
+						},
+						axisTick: {
+							alignWithLabel: true
+						}
+				    },
+				    yAxis: {
+				        type: 'value',
+				        splitLine: {
+							show: true,
+				            lineStyle: {
+				                type: 'dashed',
+				                color: '#ccc'
+				            }
+				        },
+				        axisLine: {
+							show: true,
+				            onZero: false,
+				            lineStyle: {
+				                color: '#666'
+				            }
+				        },
+				        axisLabel: {
+				            formatter: function (value) {
+				                return '￥'+value
+				            }
+				        }
+				    },
+				    series: [{
+						name: '',
+						type: 'bar',
+						barWidth : 20,
+				        data: chardata,
+				    }]
+				};
+				option && myChart.setOption(option);
+				$(window).resize(function() {
+				    myChart.resize();
+				});
+			}
+			
+		})
+	</script>
+</body>
+</html>

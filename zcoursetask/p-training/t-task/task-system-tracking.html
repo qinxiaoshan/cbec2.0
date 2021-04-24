@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>实训任务-系统任务-任务追踪</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span class="active">实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui equal width grid stackable padded">
+					
+					<div class="sixteen wide column">
+						<div class="ui basic segment no-padding">
+							<div class="ui left floated header"><h2 class="sh_contitle2">实训任务</h2></div>
+							<div class="fr sh_extra m-0">
+								<form class="ui form large searchform">
+									<div class="inline fields">
+										<div class="field">
+											<label>接收者：</label>
+											<div class="ui icon input">
+												<input name="studentName" type="text" placeholder="请输入姓名" autocomplete="off">
+											</div>
+										</div>
+										<div class="field">
+											<label>状态：</label>
+											<div class="ui icon input">
+												<select name="" class="ui fluid dropdown">
+													<option value="">--请选择--</option>
+													<option value="1">进行中</option>
+													<option value="0">已完成</option>
+													<option value="0">未开始</option>
+												</select>
+											</div>
+										</div>
+										<div class="field">
+											<button type="button" class="ui compact icon teal button submit p-3"><i class="search icon"></i></button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="ui huge teal inverted segment clearfix mb-0">
+							<span class="fl sh_routerback"><i class="chevron left icon"></i></span>
+							<h3 class="ui left floated header">任务追踪</h3>
+						</div>
+						<div class="ui raised segment tasksegment mt-0">
+							<div class="teamGroupwrap">
+								
+								<div class="taskSystemlist sh_page_list mb-5">
+									<div class="taskSystemitem">
+										<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+										<div class="content">
+											<div class="info">
+												<div class="name">实训动员</div>
+												<div class="desc"><span>接收者：张晓涵</span><span class="ml-3">小组名称：123</span></div>
+												<div class="desc"><span>开始时间：2021.01.20   08:05:05</span></div>
+											</div>
+											<div class="other">
+												<span>任务得分：暂无评分</span>
+											</div>
+										</div>
+										<div class="actions">
+											<span class="sh_orange cstatus"><a class="ui yellow empty circular label"></a>进行中</span>
+										</div>
+									</div>
+									<div class="taskSystemitem">
+										<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+										<div class="content">
+											<div class="info">
+												<div class="name">实训动员</div>
+												<div class="desc"><span>接收者：张晓涵</span><span class="ml-3">小组名称：123</span></div>
+												<div class="desc"><span>开始时间：2021.01.20   08:05:05</span></div>
+											</div>
+											<div class="other">
+												<span>任务得分：暂无评分</span>
+											</div>
+										</div>
+										<div class="actions">
+											<span class="sh_green cstatus"><i class="check circle outline icon"></i>已完成</span>
+										</div>
+									</div>
+									<div class="taskSystemitem">
+										<div class="image"><img src="../../../img/avatar/people/enid.png" alt=""></div>
+										<div class="content">
+											<div class="info">
+												<div class="name">实训动员</div>
+												<div class="desc"><span>接收者：张晓涵</span><span class="ml-3">小组名称：123</span></div>
+												<div class="desc"><span>开始时间：2021.01.20   08:05:05</span></div>
+											</div>
+											<div class="other">
+												<span>任务得分：暂无评分</span>
+											</div>
+										</div>
+										<div class="actions">
+											<span class="sh_grey cstatus"><a class="ui grey empty circular label"></a>未开始</span>
+										</div>
+									</div>
+								</div>
+								<div class="sh_page_container sh_center" data-pagesize="5" data-toolbar data-link></div>
+								
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//任务查询事件
+			$(document).on('click',".searchform .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader('body')
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose()
+					},1000)
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="computer">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>考试中心-题库</title>
+	<link href="../../../plugins/pacejs/pace.css" rel="stylesheet" />
+	<link href="../../../plugins/sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+	<link href="../../../plugins/lobibox/css/lobibox.css" rel="stylesheet" />
+	<link href="../../../plugins/message/message.css" rel="stylesheet" />
+	<link href="../../../plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons-wind.min.css" rel="stylesheet" />
+	<link href="../../../plugins/weather-icons/css/weather-icons.min.css" rel="stylesheet" />
+	<link href="../../../plugins/chartist/chartist.min.css" rel="stylesheet" />
+	<link href="../../../plugins/jedate/jedate.css" rel="stylesheet" />
+	<link href="../../../plugins/paging/paging.css" rel="stylesheet" />
+	<link href="../../../plugins/webuploader/webuploader.css" rel="stylesheet" />
+	<link href="../../../semantic/dist/semantic.min.css" rel="stylesheet" />
+	<link href="../../../css/chat-page.css" rel="stylesheet" />
+	<link href="../../../css/main.css" rel="stylesheet" />
+	<link href="../../../css/common.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<div class="coursetaskWrap courseconWrap">
+	
+		<!--navbar-->
+		<div class="sh_header">
+			<div class="ui container">
+				<div class="ui menu icon borderless grid" data-color="inverted white">
+					<a class="item logo">
+						<img src="../../../img/logos.png" alt="">
+						<img src="../../../img/logos.png" alt="" class="displaynone">
+					</a>
+					<div class="ui dropdown item pointing verticalmenu sh_hidden">
+						<i class="ion-navicon-round big icon"></i>
+						<div class="ui secondary vertical center menu">
+							<a class="item" href="">首页</a>
+							<div class="ui dropdown item left pointing">
+								<span>实训课程</span>
+								<div class="menu">
+									<a class="item" href="">团队管理</a>
+									<a class="item" href="">实训任务</a>
+									<a class="item" href="">实训管理</a>
+									<a class="item" href="">教学测评</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span>数据中心</span>
+								<div class="menu">
+									<a class="item" href="">财务分析</a>
+									<a class="item" href="">店铺分析</a>
+									<a class="item" href="">财富榜</a>
+								</div>
+							</div>
+							<div class="ui dropdown item left pointing">
+								<span class="active">考试中心</span>
+								<div class="menu">
+									<a class="item" href="">题库</a>
+									<a class="item" href="">试卷</a>
+									<a class="item" href="">作业</a>
+								</div>
+							</div>
+							<a class="item" href="">实训中心</a>
+						</div>
+					</div>
+					<div class="center menu transversemenu">
+						<a class="item" href="">首页</a>
+						<div class="ui dropdown item top right pointing">
+							<span>实训课程</span>
+							<div class="menu">
+								<a class="item" href="">团队管理</a>
+								<a class="item" href="">实训任务</a>
+								<a class="item" href="">实训管理</a>
+								<a class="item" href="">教学测评</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span>数据中心</span>
+							<div class="menu">
+								<a class="item" href="">财务分析</a>
+								<a class="item" href="">店铺分析</a>
+								<a class="item" href="">财富榜</a>
+							</div>
+						</div>
+						<div class="ui dropdown item top right pointing">
+							<span class="active">考试中心</span>
+							<div class="menu">
+								<a class="item" href="">题库</a>
+								<a class="item" href="">试卷</a>
+								<a class="item" href="">作业</a>
+							</div>
+						</div>
+						<a class="item" href="">实训中心</a>
+					</div>
+					<div class="right menu">
+						<a class="item">
+							<div class="item py-1">
+								<i class="comments orange large icon"></i>
+								<div class="floating ui orange circular label">2</div>
+							</div>
+						</a>
+						<div class="ui dropdown item top right pointing">
+							<img class="ui avatar mini circular image" src="../../../img/avatar/people/enid.png" alt="label-image" />
+							<span>张老师</span>
+							<div class="menu">
+								<a class="item" href="">编辑资料</a>
+								<a class="item" href="">课程中心</a>
+								<a class="item" href="">甘特图</a>
+								<div class="ui divider"></div>
+								<a class="item" href="user/login.html">退出</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--navbar-->
+		
+		<!--maincontent-->
+		<div class="sh_main">
+			<div class="ui container py-4">
+				<div class="ui raised segment my-3 coursesegment">
+					<a class="ui yellow ribbon contitle label">题库</a>
+					<span class="coursesegmentactive fr">
+						<form class="ui large form">
+							<div class="inline fields">
+								<div class="field">
+									<div class="ui action input">
+										<div class="ui icon input">
+											<select name="" class="ui dropdown">
+												<option value="">全部题型</option>
+												<option value="1">进行中</option>
+												<option value="0">已完成</option>
+												<option value="0">未开始</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="field">
+									<div class="ui action input">
+										<input type="text" placeholder="请输入题干">
+										<button class="ui teal icon button px-3"><i class="search icon"></i></button>
+									</div>
+								</div>
+								<div class="field">
+									<button class="ui large teal button exam_question_add_btn">添加试题</button>
+								</div>
+							</div>
+						</form>
+					</span>
+					
+					<div class="courseTeamlistwrap">
+						<div class="examWrap">
+							<div class="examQuestionTypes">
+								<div class="ui styled accordion fluid examQuestionAccordion">
+									<div class="item active">
+										<div class="title active"><span class="name">第一章 店铺知识讲解</span><i class="dropdown icon"></i></div>
+										<div class="content active">
+											<div class="ui transition">
+												<ul class="examcourselist">
+													<li class="active"><a>第一课时 店铺运营</a></li>
+													<li><a>第二课时 采购</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="title active"><span class="name">第一章 店铺知识讲解</span><i class="dropdown icon"></i></div>
+										<div class="content active">
+											<div class="ui transition">
+												<ul class="examcourselist">
+													<li><a>第一课时 店铺运营</a></li>
+													<li><a>第二课时 采购</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="title active"><span class="name">第一章 店铺知识讲解</span><i class="dropdown icon"></i></div>
+										<div class="content active">
+											<div class="ui transition">
+												<ul class="examcourselist">
+													<li><a>第一课时 店铺运营</a></li>
+													<li><a>第二课时 采购</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="title active"><span class="name">第一章 店铺知识讲解</span><i class="dropdown icon"></i></div>
+										<div class="content active">
+											<div class="ui transition">
+												<ul class="examcourselist">
+													<li><a>第一课时 店铺运营</a></li>
+													<li><a>第二课时 采购</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="title active"><span class="name">第一章 店铺知识讲解</span><i class="dropdown icon"></i></div>
+										<div class="content active">
+											<div class="ui transition">
+												<ul class="examcourselist">
+													<li><a>第一课时 店铺运营</a></li>
+													<li><a>第二课时 采购</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="examQuestionTable">
+								<div class="sh_tablebox mb-5">
+									<table class="sh_datatable2 ui line table">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>题干</th>
+												<th>课程章节</th>
+												<th>课时</th>
+												<th>提醒</th>
+												<th width="180px">操作</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>十万个为什么</td>
+												<td>10000</td>
+												<td>10000</td>
+												<td>单选题</td>
+												<td>
+													<a class="ui tiny button exam_question_info_btn">查看</a>
+													<a class="ui tiny button exam_question_edit_btn">编辑</a>
+													<a class="ui tiny button exam_question_delete_btn">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>十万个为什么</td>
+												<td>10000</td>
+												<td>10000</td>
+												<td>单选题</td>
+												<td>
+													<a class="ui tiny button exam_question_info_btn">查看</a>
+													<a class="ui tiny button exam_question_edit_btn">编辑</a>
+													<a class="ui tiny button exam_question_delete_btn">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>十万个为什么</td>
+												<td>10000</td>
+												<td>10000</td>
+												<td>单选题</td>
+												<td>
+													<a class="ui tiny button exam_question_info_btn">查看</a>
+													<a class="ui tiny button exam_question_edit_btn">编辑</a>
+													<a class="ui tiny button exam_question_delete_btn">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>十万个为什么</td>
+												<td>10000</td>
+												<td>10000</td>
+												<td>单选题</td>
+												<td>
+													<a class="ui tiny button exam_question_info_btn">查看</a>
+													<a class="ui tiny button exam_question_edit_btn">编辑</a>
+													<a class="ui tiny button exam_question_delete_btn">删除</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!--maincontent-->
+		
+		<!--bottom-->
+		<div class="sh_footer">
+			<p>版权归深圳集智网络科技所有     黑icp备12345678901232458</p>
+		</div>
+		<!--bottom-->
+	
+	</div>
+	
+	
+	<!-- 添加试题弹窗 -->
+	<div class="ui small modal team_modal exam_question_add_modal">
+		<span class="actions fr modalclose"><i class="remove icon sh_close cancel"></i></span>
+		<div class="team_modal_wrap">
+			<div class="team_modal_header"><h2>添加试题</h2></div>
+			<div class="team_modal_content">
+				<form class="ui form large px-5 sh_form">
+					<div class="field">
+						<label><i class="sh_label_req"></i>题干：</label>
+						<div class="ui icon input">
+							<input name="ExamQuestionName" data-validate="shExamQuestionName" type="text" placeholder="请输入题干名称" autocomplete="off">
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>课程章节：</label>
+						<div class="ui icon input">
+							<select name="ExamQuestionChapter" class="ui fluid dropdown" data-validate="shExamQuestionChapter">
+								<option value="">--请选择--</option>
+								<option value="0">进行中</option>
+								<option value="1">已完成</option>
+								<option value="2">未开始</option>
+							</select>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>课时：</label>
+						<div class="ui icon input">
+							<select name="ExamQuestionPeriod" class="ui fluid dropdown" data-validate="shExamQuestionPeriod">
+								<option value="">--请选择--</option>
+								<option value="0">进行中</option>
+								<option value="1">已完成</option>
+								<option value="2">未开始</option>
+							</select>
+						</div>
+					</div>
+					<div class="field">
+						<label><i class="sh_label_req"></i>请选择题型：</label>
+						<div class="ui icon input questiontypebox">
+							<input type="hidden" name="ExamQuestionType" value="" />
+							<div class="ui radio checkbox sh_input_btn">
+								<input type="radio" name="ExamQuestionType" data-validate="shExamQuestionType" value="1">
+								<a class="ui tiny button">单选题</a>
+							</div>
+							<div class="ui radio checkbox sh_input_btn">
+								<input type="radio" name="ExamQuestionType" data-validate="shExamQuestionType" value="2">
+								<a class="ui tiny button">多选题</a>
+							</div>
+							<div class="ui radio checkbox sh_input_btn">
+								<input type="radio" name="ExamQuestionType" data-validate="shExamQuestionType" value="3">
+								<a class="ui tiny button">判断题</a>
+							</div>
+							<div class="ui radio checkbox sh_input_btn">
+								<input type="radio" name="ExamQuestionType" data-validate="shExamQuestionType" value="4">
+								<a class="ui tiny button">简答题</a>
+							</div>
+							<div class="ui radio checkbox sh_input_btn">
+								<input type="radio" name="ExamQuestionType" data-validate="shExamQuestionType" value="5">
+								<a class="ui tiny button">论述题</a>
+							</div>
+						</div>
+					</div>
+					
+					
+					
+					<!-- 单选题选项填写字段 -->
+					<div class="questionwrap qradio sh_hidden">
+						<!-- 用于效验依赖 有值则效验此项 -->
+						<input type="hidden" name="ExamQuestionRadioActive" value="" />
+						<!-- 单选选项填写 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">A</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionRadioOptionTitleA" data-validate="shExamQuestionRadioOptionTitleA" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">B</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionRadioOptionTitleB" data-validate="shExamQuestionRadioOptionTitleB" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">C</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionRadioOptionTitleC" data-validate="shExamQuestionRadioOptionTitleC" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">D</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionRadioOptionTitleD" data-validate="shExamQuestionRadioOptionTitleD" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 单选选项填写 结束 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionRadioCorrect" data-validate="shExamQuestionRadioCorrect" value="A">
+									<label class="coloring blue">A</label>
+								</div>
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionRadioCorrect" data-validate="shExamQuestionRadioCorrect" value="B">
+									<label class="coloring blue">B</label>
+								</div>
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionRadioCorrect" data-validate="shExamQuestionRadioCorrect" value="C">
+									<label class="coloring blue">C</label>
+								</div>
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionRadioCorrect" data-validate="shExamQuestionRadioCorrect" value="D">
+									<label class="coloring blue">D</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 单选题选项填写字段 结束 -->
+					
+					<!-- 多选题选项填写字段 -->
+					<div class="questionwrap qcheckbox sh_hidden">
+						<!-- 用于效验依赖 有值则效验此项 -->
+						<input type="hidden" name="ExamQuestionCheckboxActive" value="" />
+						<!-- 多选选项填写 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">A</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionCheckboxOptionTitleA" data-validate="shExamQuestionCheckboxOptionTitleA" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">B</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionCheckboxOptionTitleB" data-validate="shExamQuestionCheckboxOptionTitleB" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">C</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionCheckboxOptionTitleC" data-validate="shExamQuestionCheckboxOptionTitleC" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">D</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionCheckboxOptionTitleD" data-validate="shExamQuestionCheckboxOptionTitleD" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 多选选项填写 结束 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="ui checkbox">
+									<input type="checkbox" name="ExamQuestionCheckboxCorrect[]" data-validate="shExamQuestionCheckboxCorrect" value="A">
+									<label class="coloring blue">A</label>
+								</div>
+								<div class="ui checkbox">
+									<input type="checkbox" name="ExamQuestionCheckboxCorrect[]" data-validate="shExamQuestionCheckboxCorrect" value="B">
+									<label class="coloring blue">B</label>
+								</div>
+								<div class="ui checkbox">
+									<input type="checkbox" name="ExamQuestionCheckboxCorrect[]" data-validate="shExamQuestionCheckboxCorrect" value="C">
+									<label class="coloring blue">C</label>
+								</div>
+								<div class="ui checkbox">
+									<input type="checkbox" name="ExamQuestionCheckboxCorrect[]" data-validate="shExamQuestionCheckboxCorrect" value="D">
+									<label class="coloring blue">D</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 多选题选项填写字段 结束 -->
+					
+					<!-- 判断填写字段 -->
+					<div class="questionwrap qjudge sh_hidden">
+						<!-- 用于效验依赖 有值则效验此项 -->
+						<input type="hidden" name="ExamQuestionJudgeActive" value="" />
+						<!-- 判断选项填写 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">1</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionJudgeOptionTitleA" data-validate="shExamQuestionJudgeOptionTitleA" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+								<div class="field fieldgroup w-100 p-0 mb-2">
+									<div class="field w-25 p-0 m-0"><label class="w-auto">副标题：</label><div class="ui input">2</div></div>
+									<div class="field w-75 m-0">
+										<label>选项标题：</label>
+										<div class="ui small icon input"><input name="ExamQuestionJudgeOptionTitleB" data-validate="shExamQuestionJudgeOptionTitleB" type="text" maxlength="50" placeholder="请输入" autocomplete="off"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 判断选项填写 结束 -->
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionJudgeCorrect" data-validate="shExamQuestionJudgeCorrect" value="A">
+									<label class="coloring blue">1</label>
+								</div>
+								<div class="ui radio checkbox">
+									<input type="radio" name="ExamQuestionJudgeCorrect" data-validate="shExamQuestionJudgeCorrect" value="B">
+									<label class="coloring blue">2</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 判断题选项填写字段 结束 -->
+					
+					<!-- 简答填写字段 -->
+					<div class="questionwrap qshort sh_hidden">
+						<!-- 用于效验依赖 有值则效验此项 -->
+						<input type="hidden" name="ExamQuestionShortActive" value="" />
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<textarea name="ExamQuestionShortAnswer" data-validate="shExamQuestionShortAnswer" rows="4" placeholder="请输入参考答案" maxlength="500" autocomplete="off"></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- 简答填写字段 结束 -->
+					
+					<!-- 论述题填写字段 -->
+					<div class="questionwrap qpaper sh_hidden">
+						<!-- 用于效验依赖 有值则效验此项 -->
+						<input type="hidden" name="ExamQuestionPaperActive" value="" />
+						<div class="field">
+							<label></label>
+							<div class="ui input">
+								<textarea name="ExamQuestionPaperAnswer" data-validate="shExamQuestionPaperAnswer" rows="4" placeholder="请输入参考答案" maxlength="500" autocomplete="off"></textarea>
+							</div>
+						</div>
+					</div>
+					<!-- 论述题填写字段 结束 -->
+					
+					<div class="field">
+						<label><i class="sh_label_req"></i>排序：</label>
+						<div class="ui icon input">
+							<input name="ExamQuestionSort" value="1" type="number" placeholder="请输入排序" autocomplete="off">
+						</div>
+					</div>
+					<div class="actions mb-5 py-2 sh_center">
+						<button type="button" class="ui teal button submit huge mx-5 my-2">保存</button>
+						<button type="button" class="ui orange button  huge mx-5 my-2 cancel">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--jquery-->
+	<script src="../../../js/jquery-2.1.4.min.js"></script>
+	<!--jquery-->
+	<!--semantic-->
+	<script src="../../../semantic/dist/semantic.min.js"></script>
+	<!--semantic-->
+	<!--counter number-->
+	<script src="../../../plugins/counterup/jquery.counterup.min.js"></script>
+	<script src="../../../plugins/counterup/waypoints.min.js"></script>
+	<!--counter number-->
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartjs/chart.min.js"></script>
+	<!--chartjs chart-->
+	<script src="../../../plugins/chartist/chartist.min.js"></script>
+	<!--editor-->
+	<script src="../../../plugins/tinymce/tinymce.min.js"></script>
+	<!--editor-->
+	<!--datatable-->
+	<script src="../../../plugins/datatable/jquery.dataTables.js"></script>
+	<script src="../../../plugins/editable/mindmup-editabletable.js"></script>
+	<script src="../../../plugins/datatable/dataTables.semanticui.js"></script>
+	<!--datatable-->
+	<!--页面顶部进度条-->
+	<script data-pace-options='{ "ajax": false }' src="../../../plugins/pacejs/pace.js"></script>
+	<!--页面顶部进度条-->
+	
+	<script src="../../../plugins/jedate/jedate.min.js"></script>
+	<script src="../../../plugins/paging/paging.js"></script>
+	<script src="../../../plugins/webuploader/webuploader.min.js"></script>
+	<script src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+	<script src="../../../plugins/lobibox/js/notifications.js"></script>
+	<script src="../../../plugins/message/message.min.js"></script>
+	<script src="../../../plugins/moment/moment.js"></script>
+	<script src="../../../plugins/nicescrool/jquery.nicescroll.min.js"></script>
+	<script src="../../../plugins/cookie/js.cookie.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/common.js"></script>
+	<script src="../../../js/common-form.js"></script>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//初始化手风琴
+			$('.ui.accordion.examQuestionAccordion').accordion({
+				exclusive: false,
+			});
+			
+			
+			//创建小组按钮弹窗事件
+			$(".exam_question_add_btn").click(function(){
+				//初始化表单
+				$(".ui.checkbox").removeClass('checked')
+				$(".exam_question_add_modal .questionwrap").addClass('sh_hidden')
+				$('.ui.modal.exam_question_add_modal').find('.ui.form').form('reset')
+				$('.ui.modal.exam_question_add_modal').modal({
+					closable: false,
+					inverted: false,
+					blurring: false
+				}).modal('show');
+			})
+			
+			//提醒选择切换显示内容配置
+			$('.questiontypebox .ui.checkbox').checkbox({
+				selector : {
+					input  : 'input[type=checkbox], input[type=radio]',
+					label  : ''
+				},
+				onChecked: function() {
+					var that = $(this)
+					var tvalue = that.val()
+					var tform = that.parents('form')
+					tform.find('input[name=ExamQuestionRadioActive]').val('')
+					tform.find('input[name=ExamQuestionCheckboxActive]').val('')
+					tform.find('input[name=ExamQuestionJudgeActive]').val('')
+					tform.find('input[name=ExamQuestionShortActive]').val('')
+					tform.find('input[name=ExamQuestionPaperActive]').val('')
+					switch (tvalue){
+						case '1':
+							$(".exam_question_add_modal .questionwrap.qradio").removeClass('sh_hidden').siblings('.questionwrap').addClass('sh_hidden')
+							tform.find('input[name=ExamQuestionRadioActive]').val(true)
+							break;
+						case '2':
+							$(".exam_question_add_modal .questionwrap.qcheckbox").removeClass('sh_hidden').siblings('.questionwrap').addClass('sh_hidden')
+							tform.find('input[name=ExamQuestionCheckboxActive]').val(true)
+							break;
+						case '3':
+							$(".exam_question_add_modal .questionwrap.qjudge").removeClass('sh_hidden').siblings('.questionwrap').addClass('sh_hidden')
+							tform.find('input[name=ExamQuestionJudgeActive]').val(true)
+							break;
+						case '4':
+							$(".exam_question_add_modal .questionwrap.qshort").removeClass('sh_hidden').siblings('.questionwrap').addClass('sh_hidden')
+							tform.find('input[name=ExamQuestionShortActive]').val(true)
+							break;
+						case '5':
+							$(".exam_question_add_modal .questionwrap.qpaper").removeClass('sh_hidden').siblings('.questionwrap').addClass('sh_hidden')
+							tform.find('input[name=ExamQuestionPaperActive]').val(true)
+							break;
+						default:
+							$(".exam_question_add_modal .questionwrap").addClass('sh_hidden')
+							break;
+					}
+				},
+			});
+			
+			//创建小组提交事件
+			$(document).on('click',".exam_question_add_modal .button.submit",function(e){
+				var that = $(this)
+				var $Form = that.parents("form")
+				if($Form.form('is valid')) {
+					//表单验证通过
+					sh.loader($Form)
+					var formAllFields = $Form.form('get values')
+					console.log(formAllFields)
+					setTimeout(function(){
+						sh.loaderclose($Form)
+					},1000)
+				}
+			})
+			
+			
+		})
+	</script>
+</body>
+</html>
